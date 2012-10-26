@@ -16,6 +16,8 @@ gem 'carrierwave'
 gem 'rmagick'
 gem 'fog'
 
+gem 'whenever', :require => false
+
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
@@ -35,6 +37,7 @@ group :test do
 
   gem 'vcr'
   gem 'webmock'
+  gem 'timecop'
 
   gem 'guard', '1.4.0'
   gem 'guard-cucumber'
