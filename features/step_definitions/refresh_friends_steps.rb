@@ -49,7 +49,8 @@ end
 When /^I wait 10 minutes$/ do
   # Timecop.travel(Time.now + 10.minutes)
   # sleep(10.minutes)
-  refresh_friends(cassette: false)
+  # refresh_friends(cassette: 'refresh_friends')
+  rubyfriends_app.refresh_friends
 end
 
 Then /^the app should have more friends than it did 10 minutes ago$/ do
