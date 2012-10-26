@@ -1,0 +1,3 @@
+class RubyfriendsAppController < ApplicationController
+
+end
