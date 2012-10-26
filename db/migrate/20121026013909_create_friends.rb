@@ -5,6 +5,7 @@ class CreateFriends < ActiveRecord::Migration
       t.string :tweet_text
       t.string :username
       t.string :media_url
+      t.string :image
       t.string :media_display_url
       t.string :thumb_file_name
       t.integer :retweet_count

@@ -4,12 +4,17 @@ gem 'rails', '3.2.8'
 
 gem 'pg'
 
-# gems used by friday hug, we're copying the script directly for now,
+# gems used by fridayhug(git://github.com/commita/fridayhug.git),
+# we're copying the script and hug model directly for now,
 # so use exactly what's there
 gem 'twitter', '~> 2.1.0'
-gem 'aws-s3', '~> 0.6.2'
-gem 'rmagick', '2.12.2', :require => 'RMagick'
+# gem 'aws-s3', '~> 0.6.2'
+# gem 'rmagick', '2.12.2', :require => 'RMagick'
 
+gem "rails_config", '0.2.5'
+gem 'carrierwave'
+gem 'rmagick'
+gem 'fog'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'

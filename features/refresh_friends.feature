@@ -8,5 +8,5 @@ Feature: Refresh friends
   @wip
   Scenario: populate the app with tweets
     Given the app knows about 0 tweets
-    When manually run the update friends task
+    When I manually run the refresh friends task
     Then the app should know about more than 0 tweets
