@@ -1,0 +1,4 @@
+- deploy to heroku
+- add atom feed
+- add google analytics
+- get about page text and paste it in
