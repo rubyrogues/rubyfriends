@@ -1,1 +1,28 @@
-Hello world from index
+.hero-unit
+  %h1= rubyfriends_app.subtitle
+  = link_to "Learn more", about_path, id: 'learn-more'
+  -# TODO - add facebook like button
+  .bird
+    %p
+      Share your friends with the hashtag
+      %br
+      = link_to "#RubyFriends", twitter_url
+      or
+      = link_to "##{rubyfriends_app.current_conference_hashtag}",
+                twitter_url(rubyfriends_app.current_conference_hashtag)
+  %span.shared-smiles-count
+    #{rubyfriends_app.tweets_count} smiles shared so far!
+
+%ul#smiles-list
+  - rubyfriends_app.tweets.each do |tweet|
+    %li{class: cycle('one', 'two', 'three', 'four')}
+      %a.ajax_overlay{href: tweet_path(tweet)}
+        = image_tag(tweet.image_url(:thumb).to_s)
+      .text
+        %p= tweet.tweet_text
+        %small
+          = link_to "@#{tweet.username}", twitter_url(tweet.username)
+          at #{tweet.published_at.strftime('%b, %d %Y')}
+          = link_to "link", twitter_url("#{tweet.username}/status/#{tweet.tweet_id}")
+
+= ajax_overlay

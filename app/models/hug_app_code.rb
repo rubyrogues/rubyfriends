@@ -1,8 +1,4 @@
 module HugAppHelpers
-  # from helpers, in fridayhugs
-  def is_a_friend?(text)
-    text =~ /hug|friday/i
-  end
 
   def is_image?(url)
     url =~ /twitpic.com|yfrog.com|instagr.am|img.ly|ow.ly|.jpg|.jpeg|.gif|.png/i
@@ -39,16 +35,16 @@ module HugAppScript
   include HugAppHelpers
 
   require 'twitter'
-  def update_friends
+  def update_tweets
     puts Time.now
-    puts "Updating hugs..."
+    puts "Updating tweets..."
 
     terms = RUBYFRIENDS_APP.hashtags
 
     terms.each do |term|
       puts "Search: #{term}"
       Twitter.search(term, include_entities: true, rpp: 50, result_type: "recent").each do |tweet|
-        Friend.create_or_skip(tweet)
+        Tweet.create_or_skip(tweet)
       end
       sleep(5)
     end
@@ -58,10 +54,10 @@ module HugAppScript
 
 end
 
-class Friend
+class Tweet
   extend HugAppHelpers
 
-  def self.create_or_skip(tweet, skip_friend_validation = false)
+  def self.create_or_skip(tweet, skip_tweet_validation = false)
 
     if tweet.media && tweet.media.empty?
       tweet.expanded_urls.each do |expanded_url|
@@ -75,12 +71,11 @@ class Friend
       @media_display_url = tweet.media.first.display_url
     end
 
-    if (is_a_friend?(tweet.text) || skip_friend_validation) && @media_url
-
+    if @media_url
 
       if where(media_url: @media_url).empty?
         user = tweet.from_user.nil? ? tweet.user.screen_name : tweet.from_user
-        friend = new(
+        new_tweet = new(
           tweet_id: tweet.id,
           tweet_text: tweet.text,
           username: user,
@@ -93,10 +88,10 @@ class Friend
 
         # binding.pry
 
-        friend.remote_image_url = @media_url
-        friend.save!
-
-
+        # carrierwave remote_fieldname_url will download image from url, convert
+        # it and resave it
+        new_tweet.remote_image_url = @media_url
+        new_tweet.save!
       end
 
     end

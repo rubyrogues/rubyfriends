@@ -1,0 +1,18 @@
+jQuery(function($) {
+  // jquery ui tools ajax overlay
+  $(".ajax_overlay").overlay({
+    mask: 'gray',
+    effect: 'apple',
+    top: '1%',
+    // left: 0,
+    target: '#overlay',
+    fixed: false,
+    onBeforeLoad: function() {
+      $("#overlay .contentWrap").html('<div><p>One Second...</p><img alt="Spinner" src="<%= asset_path('spinner2.gif') %>" /></div>');
+      // grab wrapper element inside content
+      var wrap = this.getOverlay().find(".contentWrap");
+      // load the page specified in the trigger
+      wrap.load(this.getTrigger().attr("href"));
+    }
+  });
+});

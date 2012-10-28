@@ -1,6 +1,6 @@
-class CreateFriends < ActiveRecord::Migration
+class CreateTweets < ActiveRecord::Migration
   def change
-    create_table :friends do |t|
+    create_table :tweets do |t|
       t.string :tweet_id
       t.string :tweet_text
       t.string :username

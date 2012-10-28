@@ -13,7 +13,7 @@
 
 ActiveRecord::Schema.define(:version => 20121026013909) do
 
-  create_table "friends", :force => true do |t|
+  create_table "tweets", :force => true do |t|
     t.string   "tweet_id"
     t.string   "tweet_text"
     t.string   "username"

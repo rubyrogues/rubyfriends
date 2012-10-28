@@ -1,4 +1,4 @@
-class Friend < ActiveRecord::Base
+class Tweet < ActiveRecord::Base
 
   def self.published
     where(published: true)

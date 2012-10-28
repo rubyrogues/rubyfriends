@@ -23,6 +23,8 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
 
+  gem 'compass-rails'
+  gem 'susy'
   gem 'bootstrap-sass', '~> 2.1.0.0'
 end
 
@@ -41,6 +43,7 @@ group :test do
 
   gem 'guard', '1.4.0'
   gem 'guard-cucumber'
+  gem 'guard-livereload'
   gem 'listen'
   gem 'rb-fsevent', '~> 0.9.1'
 
