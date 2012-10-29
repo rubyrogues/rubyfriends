@@ -29,7 +29,6 @@ When /^I manually run the refresh tweets task$/ do
 end
 
 Then /^the app should know about more than (#{CAPTURE_A_NUMBER}) tweets$/ do |expected_count|
-  binding.pry
   rubyfriends_app.tweets_count.should > expected_count
 end
 

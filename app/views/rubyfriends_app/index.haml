@@ -13,8 +13,10 @@
   %span.shared-smiles-count
     #{rubyfriends_app.tweets_count} smiles shared so far!
 
+= paginate(paginated_tweets)
+
 %ul#smiles-list
-  - rubyfriends_app.tweets.each do |tweet|
+  - paginated_tweets.each do |tweet|
     %li{class: cycle('one', 'two', 'three', 'four')}
       %a.ajax_overlay{href: tweet_path(tweet)}
         = image_tag(tweet.image_url(:thumb).to_s)
@@ -24,5 +26,7 @@
           = link_to "@#{tweet.username}", twitter_url(tweet.username)
           at #{tweet.published_at.strftime('%b, %d %Y')}
           = link_to "link", twitter_url("#{tweet.username}/status/#{tweet.tweet_id}")
+
+= paginate(paginated_tweets)
 
 = ajax_overlay

@@ -5,4 +5,11 @@ class RubyfriendsAppController < ApplicationController
     render layout: false
   end
 
+  private
+
+    helper_method :paginated_tweets
+    def paginated_tweets
+      @paginated_tweets ||= rubyfriends_app.paginated_tweets(params[:page])
+    end
+
 end

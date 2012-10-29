@@ -12,6 +12,10 @@ class RubyfriendsApp
     Tweet.published
   end
 
+  def paginated_tweets(params)
+    tweets.page(params).per(20)
+  end
+
   def refresh_tweets
     HugAppScript.update_tweets
   end
