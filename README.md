@@ -20,4 +20,6 @@ TODO
         want to have it say the current or upcoming conference
       - so, each conference, its hashtag and date could be listed in a yaml file and then we just show tag for > last conference & <= the last day of the last conference? Maybe there is a much simpler way? Discuss.
 
+- fix homepage for mobile
+
 - add a license
