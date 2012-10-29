@@ -4,7 +4,8 @@
 # http://en.wikipedia.org/wiki/Cron
 
 # Example:
-#
+
+# not being used its done by a heroku scheduler
 set :output, "log/cron_log.log"
 
 every 10.minutes do

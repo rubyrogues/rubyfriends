@@ -9,7 +9,7 @@ class RubyfriendsApp
   end
 
   def tweets
-    Tweet.all
+    Tweet.published
   end
 
   def refresh_tweets

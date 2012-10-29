@@ -11,7 +11,7 @@
 /db/*.sqlite3
 
 # Ignore all logfiles and tempfiles.
-/log/*.log
+/log/*
 /tmp
 .rvmrc
 *.tmproj
@@ -23,3 +23,5 @@ config/s3.yml
 public/uploads
 public/test
 public/cucumber
+
+config/unicorn.rb
