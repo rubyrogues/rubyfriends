@@ -1,5 +1,5 @@
-- deploy to heroku
 - add atom feed
 - add google analytics
 - get about page text and paste it in
-- add pagination to homepage
+- add hashtags for all known ruby conferences so that regardless when a new conf comes around, the app will just work
+- maybe use a yaml file to store the list of ruby conferences so adding new ones is simple
