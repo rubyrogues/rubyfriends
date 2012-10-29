@@ -1,4 +1,4 @@
-class RubyfriendsAppController < ApplicationController
+class TweetsController < ApplicationController
 
   def show
     @tweet = Tweet.find(params[:id])
