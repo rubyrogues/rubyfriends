@@ -18,6 +18,7 @@
 
 public/assets
 public/uploads
+public/**/uploads
 public/test
 public/cucumber
 
