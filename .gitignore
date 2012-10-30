@@ -15,6 +15,7 @@
 /tmp
 .rvmrc
 *.tmproj
+.sass-cache
 
 public/assets
 public/uploads
