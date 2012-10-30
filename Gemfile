@@ -2,12 +2,12 @@ source :rubygems
 
 gem 'rails', '3.2.8'
 
-gem 'haml-rails'
-gem 'rails_config', '0.2.5'
 gem 'carrierwave'
 gem 'fog'
+gem 'haml-rails'
 gem 'jquery-rails'
 gem 'kaminari'
+gem 'rails_config', '0.2.5'
 gem 'rmagick'
 gem 'thin'
 gem 'twitter', '~> 2.1.0'
