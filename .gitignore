@@ -15,13 +15,11 @@
 /tmp
 .rvmrc
 *.tmproj
-config/database.yml
-config/settings.yml
-config/settings/*
-config/s3.yml
+.sass-cache
 
+public/assets
 public/uploads
+public/**/uploads
 public/test
 public/cucumber
 
-config/unicorn.rb
