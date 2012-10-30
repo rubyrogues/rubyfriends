@@ -16,9 +16,9 @@ $column-width   : 4em;
 $gutter-width   : 1em;
 $grid-padding   : $gutter-width;
 
-$mobile-layout : 7;
+// $full-layout : 12;
 
-$container-style: fluid;
+// $container-style: fluid;
 
 //-----------------------------------------
 // Imports
@@ -29,4 +29,8 @@ $container-style: fluid;
 
 @import "sprites/*.png";
 
+// mixins first
+@import "mixins";
+
 @import "main";
+@import "overlay";
