@@ -213,6 +213,7 @@ GEM
       hike (~> 1.2)
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
+    sqlite3 (1.3.6)
     susy (1.0.3)
       compass (>= 0.12.2)
       sass (>= 3.2.0)
@@ -276,6 +277,7 @@ DEPENDENCIES
   rmagick
   rspec-rails
   sass-rails (~> 3.2.3)
+  sqlite3
   susy
   thin
   timecop

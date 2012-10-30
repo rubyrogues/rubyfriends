@@ -8,7 +8,6 @@ gem 'carrierwave'
 gem 'fog'
 gem 'jquery-rails'
 gem 'kaminari'
-gem 'pg'
 gem 'rmagick'
 gem 'thin'
 gem 'twitter', '~> 2.1.0'
@@ -21,6 +20,14 @@ group :assets do
   gem 'sass-rails', '~> 3.2.3'
   gem 'susy'
   gem 'uglifier', '>= 1.0.3'
+end
+
+group :production do
+  gem 'pg'
+end
+
+group :development, :test do
+  gem 'sqlite3'
 end
 
 group :test do

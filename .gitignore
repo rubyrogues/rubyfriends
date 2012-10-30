@@ -15,13 +15,8 @@
 /tmp
 .rvmrc
 *.tmproj
-config/database.yml
-config/settings.yml
-config/settings/*
-config/s3.yml
 
 public/uploads
 public/test
 public/cucumber
 
-config/unicorn.rb
