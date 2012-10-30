@@ -19,7 +19,7 @@
   - paginated_tweets.each do |tweet|
     %li{class: cycle('one', 'two', 'three', 'four')}
       %a.ajax_overlay{href: tweet_path(tweet)}
-        = image_tag(tweet.image_url(:thumb).to_s, class: :pic)
+        = image_tag(tweet.image_url(:thumb).to_s)
       .text
         %p= tweet.tweet_text
         %small
