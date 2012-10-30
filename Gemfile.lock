@@ -141,6 +141,7 @@ GEM
     net-scp (1.0.4)
       net-ssh (>= 1.99.1)
     net-ssh (2.6.1)
+    newrelic_rpm (3.4.2.1)
     nokogiri (1.5.5)
     pg (0.14.1)
     polyglot (0.3.3)
@@ -267,6 +268,7 @@ DEPENDENCIES
   kaminari
   launchy
   listen
+  newrelic_rpm
   pg
   pry
   pry-doc
