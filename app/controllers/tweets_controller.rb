@@ -1,6 +1,6 @@
 class TweetsController < ApplicationController
   def index
-    @tweets = Tweet.first 20
+    @tweets = Tweet.published.first 20
   end
 
   def show
