@@ -40,13 +40,10 @@ section#main {
     padding:10px 5%;
     position:relative;
     a#learn-more {
-      float:left;
-      display:block;
       @include margin-leader(0.5);
       @include margin-trailer(0.5);
       @extend .btn;
       @extend .btn-primary;
-      @extend .btn-large;
       margin: 0 1em 0 0;
     } //a#learn_more
 
