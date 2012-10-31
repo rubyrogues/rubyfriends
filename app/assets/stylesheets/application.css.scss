@@ -1,36 +1,32 @@
 //-----------------------------------------
-// Variables - set before importing anything so that defaults from bootstrap
-//             so that default vars from bootstrap can be overriden
-//-----------------------------------------
-
-// My vars
-
-// override bootstrap vars
-
-
-//-----------------------------------------
-// Susy Grid vars (http://susy.oddbird.net/)
-//-----------------------------------------
-$total-columns  : 12;
-$column-width   : 4em;
-$gutter-width   : 1em;
-$grid-padding   : $gutter-width;
-
-// $full-layout : 12;
-
-// $container-style: fluid;
-
-//-----------------------------------------
 // Imports
 //-----------------------------------------
 @import "bootstrap";
 @import "bootstrap-responsive";
 @import "susy";
+@import "compass/typography/vertical_rhythm";
 
-@import "sprites/*.png";
+//-----------------------------------------
+// Susy Grid vars (http://susy.oddbird.net/)
+//-----------------------------------------
+$total-columns  : 6;
+$column-width   : 4em;
+$gutter-width   : 1em;
+$grid-padding   : $gutter-width;
 
-// mixins first
+$full-break: 12;
+
+// compass vars for vertical rhythm based on bootstrap default vars
+$base-font-size:$baseFontSize; //14px
+$base-line-height:$baseLineHeight; //20px
+
+// mixins first (or anything used by following files, so sprites too)
 @import "mixins";
+@import "sprites/*.png";
 
 @import "main";
 @import "overlay";
+
+body {
+  @include establish-baseline; // establish compass vertical rhythm
+} //body
