@@ -1,4 +1,7 @@
 class TweetsController < ApplicationController
+  def index
+    @tweets = Tweet.first 20
+  end
 
   def show
     @tweet = Tweet.find(params[:id])
