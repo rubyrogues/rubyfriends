@@ -16,7 +16,7 @@ class Tweet::HtmlPresenter
   def text
     buffer = tweet.tweet_text
 
-    buffer.gsub! /#(\w+)/, '<a href="http://twitter.com/search?q=#\\1">#\\1</a>'
+    buffer.gsub! /#(\w+)/, '<a href="http://twitter.com/search?q=%23\\1">#\\1</a>'
     buffer.gsub! /@(\w+)/, '<a href="http://twitter.com/\\1">@\\1</a>'
 
     buffer

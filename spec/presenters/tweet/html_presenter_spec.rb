@@ -22,7 +22,7 @@ describe Tweet::HtmlPresenter do
     subject(:text) { presenter.text }
 
     it "links twitter hashtags" do
-      should include '<a href="http://twitter.com/search?q=#rubyfriends">#rubyfriends</a>'
+      should include '<a href="http://twitter.com/search?q=%23rubyfriends">#rubyfriends</a>'
     end
 
     it "links twitter usernames" do
