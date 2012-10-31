@@ -17,4 +17,17 @@ describe Tweet::HtmlPresenter do
   its(:date) { should == "Jan 02, 2012" }
   its(:url) { should == tweet.media_display_url }
   its(:username) { should == "@joshsusser" }
+
+  describe "#text" do
+    subject(:text) { presenter.text }
+
+    it "links twitter hashtags" do
+      should include '<a href="http://twitter.com/search?q=#rubyfriends">#rubyfriends</a>'
+    end
+
+    it "links twitter usernames" do
+      should include '<a href="http://twitter.com/SteelCityRuby">@SteelCityRuby</a>'
+      should include '<a href="http://twitter.com/coreyhaines">@coreyhaines</a>'
+    end
+  end
 end

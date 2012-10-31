@@ -15,7 +15,7 @@
       %a.ajax_overlay{href: tweet_path(tweet)}
         = image_tag(tweet.image_url(:thumb).to_s)
       .text
-        %p= tweet.tweet_text
+        %p= raw(tweet.text)
         %small
           = link_to tweet.username, twitter_url(tweet.username)
           on #{tweet.date}

@@ -13,6 +13,15 @@ class Tweet::HtmlPresenter
     published_at.strftime '%b %d, %Y'
   end
 
+  def text
+    buffer = tweet.tweet_text
+
+    buffer.gsub! /#(\w+)/, '<a href="http://twitter.com/search?q=#\\1">#\\1</a>'
+    buffer.gsub! /@(\w+)/, '<a href="http://twitter.com/\\1">@\\1</a>'
+
+    buffer
+  end
+
   def url
     tweet.media_display_url
   end
