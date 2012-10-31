@@ -4,10 +4,9 @@
   -# TODO - add facebook like button
   .bird
     %p
-      Share your friends with the hashtag
+      Share friends with hashtags
       %br
       = link_to "#RubyFriends", twitter_url
-      or
       = link_to "##{rubyfriends_app.current_conference_hashtag}",
                 twitter_url(rubyfriends_app.current_conference_hashtag)
   %span.shared-smiles-count

@@ -1,26 +1,31 @@
-@mixin no-list {
-  list-style: none;
-  margin-left: 0;
-}
-
 #wrapper {
   @include container;
   // @include susy-grid-background;
+  // @include debug-vertical-alignment;
 
-  @include at-breakpoint($mobile-layout) { // ;
+  @include at-breakpoint($full-break) {
     @include set-container-width;
     // @include susy-grid-background;
+    // @include debug-vertical-alignment;
   }
 } //#wrapper
 
+
+
 header#page_header {
-  @include span-columns(12);
   h1 {
-    @include span-columns(10);
+    @include span-columns(4);
+    @include adjust-font-size-to(20px);
+    @include at-breakpoint($full-break) {
+      @include span-columns(10, $full-break);
+      @include adjust-font-size-to(36px);
+    }
   } //h1
   .feed {
     @include span-columns(2 omega);
-    line-height:40px;
+    @include at-breakpoint($full-break) {
+      @include span-columns(2 omega);
+    }
     margin:10px auto;
     text-align:right;
   } //.feed
@@ -28,10 +33,15 @@ header#page_header {
 
 
 section#main {
-  @include span-columns(12);
-
+  @include span-columns($total-columns);
   .hero-unit {
+    float:left;
+    width:90%;
+    padding:10px 5%;
+    position:relative;
     a#learn-more {
+      float:left;
+      display:block;
       @include margin-leader(0.5);
       @include margin-trailer(0.5);
       @extend .btn;
@@ -39,35 +49,56 @@ section#main {
       @extend .btn-large;
     } //a#learn_more
 
+    h1 {
+      @include adjust-font-size-to(24px);
+    } //h1
+
     .bird {
-      padding-left:120px;
+      float:left;
+      clear: both;
+      width:120px;
       height:100px;
       @include sprites-sprite(twitter_newbird_blue);
       @include margin-trailer(0.5);
+      position:relative;
       p {
-        padding:20px;
+        width:120px;
+        @include adjust-font-size-to(16px);
         margin-bottom:0;
+        position:absolute;
+        left:130px;
+        top:-30px;
       } //p
     } //.bird
 
     span.shared-smiles-count {
       @extend .label;
       @extend .label-info;
+      position:absolute;
+      right:10px;
+      bottom:10px;
     } //span.shared-smiles-count
 
   } //.hero-unit
 
   #smiles-list {
     @include no-list;
-    @include span-columns(12);
+    @include span-columns($total-columns);
     li {
-      @include span-columns(3,12);
+      @include span-columns(3);
+      &.two, &.four {
+        @include omega;
+      } //&.two
+      @include at-breakpoint($full-break) {
+        @include span-columns(3,$total-columns);
+        &.two {
+          @include remove-omega;
+        } //&.two
+      }
       height:380px;
       @include margin-trailer(1);
       background-color:$grayLighter;
-      &.four {
-        @include omega;
-      } //&.four
+
       &.one, &.three {
         background-color:$grayLighter;
       } //&.two, &.four
@@ -75,26 +106,4 @@ section#main {
   } //#smiles-list
 } //section#main
 
-@mixin close-button {
-  @include sprites-sprite(close);
-  position:absolute;
-  left:5px; top:5px;
-  cursor:pointer;
-  height:35px;
-  width:35px;
-  background-color:transparent;
-}
 
-#overlay {
-  display:none;
-  padding:35px;
-  @include border-radius(10px);
-  outline:none;
-  .close {
-    @include close-button;
-  } //.close
-} //.overlay
-
-.click_to_ajax_overlay {
-  cursor:pointer;
-} //.click_to_ajax_overlay

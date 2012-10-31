@@ -1,0 +1,23 @@
+@mixin close-button {
+  @include sprites-sprite(close);
+  position:absolute;
+  left:5px; top:5px;
+  cursor:pointer;
+  height:35px;
+  width:35px;
+  background-color:transparent;
+}
+
+#overlay {
+  display:none;
+  padding:35px;
+  @include border-radius(10px);
+  outline:none;
+  .close {
+    @include close-button;
+  } //.close
+} //.overlay
+
+.click_to_ajax_overlay {
+  cursor:pointer;
+} //.click_to_ajax_overlay
