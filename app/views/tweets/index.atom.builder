@@ -1,5 +1,5 @@
 atom_feed root_url: tweets_url do |feed|
-  feed.title "RubyFriends"
+  feed.title "#RubyFriends"
   feed.updated @tweets.first.updated_at
 
   @tweets.each do |tweet|
