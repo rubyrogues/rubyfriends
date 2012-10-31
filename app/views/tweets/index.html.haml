@@ -9,8 +9,6 @@
   %span.shared-smiles-count
     #{rubyfriends_app.tweets_count} friendships so far!
 
-= paginate(paginated_tweets)
-
 %ul#smiles-list
   - paginated_tweets.each do |tweet|
     %li{class: cycle('one', 'two', 'three', 'four')}
