@@ -1,19 +1,17 @@
 %html
   %head
-    %meta{charset: "utf-8" }/
-    %meta{'http-equiv' => 'X-UA-Compatible', content: 'IE=edge,chrome=1' }/
-    %meta{name: "viewport", content: "width=device-width, initial-scale=1.0"}/
-    = auto_discovery_link_tag :atom, tweets_url(format: :atom), title: "#RubyFriends"
+    %meta{ charset: 'utf-8' }
+    %meta{ 'http-equiv' => 'X-UA-Compatible', content: "IE=edge,chrome=1" }
+    %meta{ name: :viewport, content: "width=device-width, initial-scale=1.0" }
     %title #RubyFriends - Smile for the camera!
-    = stylesheet_link_tag 'application'
+    = stylesheet_link_tag :application
+    = auto_discovery_link_tag :atom, tweets_url(format: :atom), title: "#RubyFriends"
     = csrf_meta_tag
-    -# TODO - add google analytics
   %body
     #wrapper
       = render 'header'
-      %section#main{role: 'main'}
+      %section#main{ role: :main }
         = yield
-      =# render 'footer'
-    = javascript_include_tag 'application'
+    = javascript_include_tag :application
     = yield :javascripts
     = render 'shared/ga'
