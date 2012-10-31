@@ -1,5 +1,5 @@
 %header#page_header
   %h1= link_to rubyfriends_app.title, root_path
   .feed
-    = link_to image_tag('twitter_icon_grey.png'),
-              twitter_url
+    = link_to image_tag('twitter_icon_grey.png'), twitter_url
+    = link_to image_tag('feed_icon_grey.png'), tweets_url(format: :atom)

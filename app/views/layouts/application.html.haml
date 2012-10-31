@@ -1,8 +1,8 @@
 %html
   %head
-    %meta{ :charset => "utf-8" }/
-    %meta{ 'http-equiv' => 'X-UA-Compatible', :content => 'IE=edge,chrome=1' }/
-    %meta{ :name => "viewport", :content => "width=device-width" }/
+    %meta{charset: "utf-8" }/
+    %meta{'http-equiv' => 'X-UA-Compatible', content: 'IE=edge,chrome=1' }/
+    %meta{name: "viewport", content: "width=device-width, initial-scale=1.0"}/
     = auto_discovery_link_tag :atom, tweets_url(format: :atom), title: "#RubyFriends"
     %title #RubyFriends - Smile for the camera!
     = stylesheet_link_tag 'application'
