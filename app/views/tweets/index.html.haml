@@ -4,13 +4,10 @@
   -# TODO - add facebook like button
   .bird
     %p
-      Share friends with hashtags
-      %br
+      Share your friendships with the hashtag
       = link_to "#RubyFriends", twitter_url
-      = link_to "##{rubyfriends_app.current_conference_hashtag}",
-                twitter_url(rubyfriends_app.current_conference_hashtag)
   %span.shared-smiles-count
-    #{rubyfriends_app.tweets_count} smiles shared so far!
+    #{rubyfriends_app.tweets_count} friendships so far!
 
 = paginate(paginated_tweets)
 

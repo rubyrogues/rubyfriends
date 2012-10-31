@@ -4,6 +4,6 @@ RUBYFRIENDS_APP = RubyfriendsApp.new.tap do |app|
   app.current_conference_hashtag = 'RubyConf'
 
   app.title = 'RubyFriends.com'
-  app.subtitle = 'Smile for the camera!'
+  app.subtitle = 'Community starts with friendship!'
 
 end
