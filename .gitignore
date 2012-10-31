@@ -14,6 +14,7 @@
 /log/*
 /tmp
 .rvmrc
+.powrc
 *.tmproj
 .sass-cache
 
