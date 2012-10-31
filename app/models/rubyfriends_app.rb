@@ -2,10 +2,10 @@ require_relative 'tweet'
 require_relative 'hug_app_code'
 
 class RubyfriendsApp
-  attr_accessor :default_hashtag, :title, :subtitle, :current_conference_hashtag
+  attr_accessor :default_hashtag, :title, :subtitle
 
   def hashtags
-    [default_hashtag, current_conference_hashtag]
+    default_hashtag
   end
 
   def tweets
