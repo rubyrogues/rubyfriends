@@ -1,5 +1,5 @@
 class Tweet < ActiveRecord::Base
-  default_scope order("created_at desc")
+  default_scope order("published_at desc")
 
   mount_uploader :image, ImageUploader
 
