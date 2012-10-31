@@ -28,6 +28,7 @@ group :production do
 end
 
 group :development, :test do
+  gem 'rspec-rails'
   gem 'sqlite3'
 end
 
@@ -38,13 +39,14 @@ group :test do
   gem 'guard', '1.4.0'
   gem 'guard-cucumber'
   gem 'guard-livereload'
+  gem 'guard-rspec'
   gem 'launchy'
   gem 'listen'
   gem 'pry'
   gem 'pry-doc'
   gem 'pry-rails'
   gem 'rb-fsevent', '~> 0.9.1'
-  gem 'rspec-rails'
+  gem 'simplecov'
   gem 'timecop'
   gem 'vcr'
   gem 'webmock'
