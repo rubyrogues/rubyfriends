@@ -29,5 +29,11 @@ describe Tweet::HtmlPresenter do
       should include '<a href="http://twitter.com/SteelCityRuby">@SteelCityRuby</a>'
       should include '<a href="http://twitter.com/coreyhaines">@coreyhaines</a>'
     end
+
+    it "sanitizes html" do
+      tweet.tweet_text = "this < is > a & test"
+
+      should == "this &lt; is &gt; a &amp; test"
+    end
   end
 end
