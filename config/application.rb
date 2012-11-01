@@ -15,6 +15,8 @@ if defined?(Bundler)
   # Bundler.require(:default, :assets, Rails.env)
 end
 
+$stdout.sync = true
+
 module Rubyfriends
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
