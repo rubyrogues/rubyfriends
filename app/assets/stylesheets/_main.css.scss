@@ -62,8 +62,8 @@ section#main {
     } //.bird
 
     p {
-      @include adjust-font-size-to(20px);
-      // margin: 1em;
+      @include adjust-font-size-to(24px);
+      margin: 1em 0;
     }
 
     span.shared-smiles-count {
