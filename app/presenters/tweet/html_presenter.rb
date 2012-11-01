@@ -22,7 +22,7 @@ class Tweet::HtmlPresenter
   def url
     buffer = tweet.media_display_url
     return unless buffer
-    buffer.prepend("http://") unless buffer.start_with? "http://"
+    buffer = "http://#{buffer}" unless buffer.start_with? "http://"
     buffer
   end
 
