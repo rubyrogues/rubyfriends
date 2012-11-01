@@ -39,7 +39,7 @@ describe Tweet::HtmlPresenter do
 
     it "adds a protocol if missing" do
       tweet.media_display_url = "pic.twitter.com/cyL9StoS"
-      should match /^http\:\/\//
+      should match  %r{^http://}
     end
   end
 end
