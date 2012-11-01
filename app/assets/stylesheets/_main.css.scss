@@ -90,13 +90,16 @@ section#main {
           @include remove-omega;
         } //&.two
       }
-      height:380px;
       @include margin-trailer(1);
       background-color:$grayLighter;
 
       &.one, &.three {
         background-color:$grayLighter;
       } //&.two, &.four
+
+      .text {
+        margin: 1em
+      }
     } //li
   } //#smiles-list
 } //section#main
