@@ -10,12 +10,11 @@ end
 World(KnowsApp)
 
 module WorldHelper
-  attr_writer :rubyfriends_app
   def rubyfriends_app
     if ENV['USE_GUI']
-      rubyfriends_app = KnowsApp::UI.new
+      @rubyfriends_app ||= KnowsApp::UI.new
     else
-      rubyfriends_app = RubyfriendsApp.new
+      @rubyfriends_app ||= RUBYFRIENDS_APP
     end
   end
 end

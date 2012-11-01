@@ -21,19 +21,19 @@ http_interactions:
       Cache-Control:
       - max-age=15, must-revalidate, max-age=300
       Expires:
-      - Wed, 31 Oct 2012 06:31:13 GMT
+      - Thu, 01 Nov 2012 03:45:00 GMT
       Content-Type:
       - application/json;charset=utf-8
       X-Transaction:
-      - cd474d43706f0215
+      - 61325e5ecc4da46c
       X-Frame-Options:
       - SAMEORIGIN
       Vary:
       - Accept-Encoding
       Date:
-      - Wed, 31 Oct 2012 06:26:13 GMT
+      - Thu, 01 Nov 2012 03:40:00 GMT
       X-Varnish:
-      - '602452106'
+      - '991849188'
       Age:
       - '0'
       Via:
@@ -45,62 +45,70 @@ http_interactions:
       Content-Encoding:
       - gzip
       Content-Length:
-      - '1104'
+      - '1271'
     body:
       encoding: ASCII-8BIT
-      base64_string: ! 'H4sIAAAAAAAAALSXW2/bNhiG/wqhAb6ZZpM6WIcgWAMDwxpsaNcg3UUdCIxE
+      base64_string: ! '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
 
-        2QwkURGpOV7g/96POjiS7SYpmvrG0nfk4eVD6NGIRV5mTLEk4oUR4im2XNPI
+        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
 
-        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
+        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
 
-        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
+        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
 
-        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
+        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
 
-        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
+        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
 
-        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
+        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
 
-        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
+        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
 
-        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
+        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
 
-        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
+        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
 
-        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
+        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
 
-        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
+        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
 
-        g5ScZlkXaTttpOPag8iUKx0oKr7q4hy/jZs7+DhOr3mdvyYyo5WGw0uBux2o
+        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
 
-        10grkUf6GIH5aaGMgaOhlO0GruP77tjeqa13jrI65V9CTXTVF10xYYRFnWXm
+        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
 
-        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
+        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
 
-        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
+        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
 
-        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
+        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
 
-        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
+        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
 
-        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
+        JfjwEb3eTFWEuEavR+BBsMM5ej0gQ/QKyUogmaFyiTL+N8BeC/TTQFPQ3YSg
 
-        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
+        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
 
-        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
+        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
 
-        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
+        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
 
-        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
+        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
 
-        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
+        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
 
-        BdJU61/2tXZfAQAA//8DAKv8TI4kDQAA
+        Jg+T9SDyUWT9tlU6r04A4ZeiKIaEvT4kIAQ3hGe3RxH2iDU7jex4eII1BzxM
+
+        CPW6wIA599MriLXbRfpesBv5PLVwGHuYssfHtUPbPg38MHQmWbv3TZJ2VxUN
+
+        yu4Q9/bdmMTz2nkHcaf8O7xVwHsNwZhg4FFGQkxhUy6LfZpd4oxRksblmkpX
+
+        eH+Jd4un9vyW9H0fCw+G82VY+OL2W1lcg2f13c4gfv1Nrqu2XtzWuvkXAAD/
+
+        /wMAziKpujYUAAA=
 
 '
     http_version: 
-  recorded_at: Wed, 31 Oct 2012 06:26:13 GMT
+  recorded_at: Thu, 01 Nov 2012 03:40:00 GMT
 - request:
     method: get
     uri: http://p.twimg.com/A6gyJmlCUAA9Il2.jpg
@@ -120,23 +128,30 @@ http_interactions:
       Content-Length:
       - '34585'
       Etag:
-      - '1351662018'
+      - '1351693358'
       Last-Modified:
-      - Wed, 31 Oct 2012 05:40:18 +0000
-      Server:
-      - tfe
-      Cache-Control:
-      - public, max-age=602044
-      Expires:
-      - Wed, 07 Nov 2012 05:40:18 GMT
+      - Wed, 31 Oct 2012 14:22:38 +0000
       Content-Type:
       - image/jpeg
-      X-Cdn:
-      - AKAM
       Date:
-      - Wed, 31 Oct 2012 06:26:14 GMT
+      - Thu, 01 Nov 2012 03:40:00 GMT
+      Server:
+      - tfe
+      X-Error:
+      - bad-expires
+      - bad-expires
+      Accept-Ranges:
+      - bytes
+      Cache-Control:
+      - private, max-age=31449600
+      Age:
+      - '0'
+      Expires:
+      - Thu, 31 Oct 2013 03:40:00 GMT
+      X-Cdn:
+      - CTTWITTER
       Connection:
-      - keep-alive
+      - Keep-Alive
     body:
       encoding: ASCII-8BIT
       base64_string: ! '/9j/4AAQSkZJRgABAQEASABIAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsL
@@ -1679,7 +1694,7 @@ http_interactions:
 
 '
     http_version: 
-  recorded_at: Wed, 31 Oct 2012 06:26:14 GMT
+  recorded_at: Thu, 01 Nov 2012 03:40:00 GMT
 - request:
     method: get
     uri: http://p.twimg.com/A6V84xUCcAAPIQ3.jpg
@@ -1699,23 +1714,30 @@ http_interactions:
       Content-Length:
       - '26145'
       Etag:
-      - '1351633878'
+      - '1351693360'
       Last-Modified:
-      - Tue, 30 Oct 2012 21:51:18 +0000
-      Server:
-      - tfe
-      Cache-Control:
-      - public, max-age=573903
-      Expires:
-      - Tue, 06 Nov 2012 21:51:18 GMT
+      - Wed, 31 Oct 2012 14:22:40 +0000
       Content-Type:
       - image/jpeg
-      X-Cdn:
-      - AKAM
       Date:
-      - Wed, 31 Oct 2012 06:26:14 GMT
+      - Thu, 01 Nov 2012 03:40:00 GMT
+      Server:
+      - tfe
+      X-Error:
+      - bad-expires
+      - bad-expires
+      Accept-Ranges:
+      - bytes
+      Cache-Control:
+      - private, max-age=31449600
+      Age:
+      - '0'
+      Expires:
+      - Thu, 31 Oct 2013 03:40:00 GMT
+      X-Cdn:
+      - CTTWITTER
       Connection:
-      - keep-alive
+      - Keep-Alive
     body:
       encoding: ASCII-8BIT
       base64_string: ! '/9j/4AAQSkZJRgABAQEASABIAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsL
@@ -2882,5 +2904,66 @@ http_interactions:
 
 '
     http_version: 
-  recorded_at: Wed, 31 Oct 2012 06:26:15 GMT
-recorded_with: VCR 2.2.5
+  recorded_at: Thu, 01 Nov 2012 03:40:01 GMT
+- request:
+    method: get
+    uri: https://search.twitter.com/search.json?include_entities=true&q=RubyFriend&result_type=recent&rpp=50
+    body:
+      encoding: US-ASCII
+      base64_string: ''
+    headers:
+      Accept:
+      - application/json
+      User-Agent:
+      - Twitter Ruby Gem 2.1.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=15, must-revalidate, max-age=300
+      Expires:
+      - Thu, 01 Nov 2012 03:45:06 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      X-Transaction:
+      - 0699cb5012ef3eda
+      X-Frame-Options:
+      - SAMEORIGIN
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Thu, 01 Nov 2012 03:40:06 GMT
+      X-Varnish:
+      - '415398251'
+      Age:
+      - '0'
+      Via:
+      - 1.1 varnish
+      Connection:
+      - close
+      Server:
+      - tfe
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '198'
+    body:
+      encoding: ASCII-8BIT
+      base64_string: ! 'H4sIAAAAAAAAAGRPyw6CMBD8lz1wIqaAWNKk8eYHeDWmQVi1ScHSRyIx/rvr
+
+        Azlw28k8duYBza2zBgO2Svcg2IqxgqXQ1XelWxD5pqjWvGIsy3jO85LziVM+
+
+        OBCwFEAKtr4giCyFIaIbSbWPp3HnNPYtsQ7PDv1VRWeI2nrdN0iBchmVDHJ2
+
+        JmSKJqgwWpQOG+xDQlYTW1R066DRy+yT/9Z5EIfjHyiLTn1rlTRv+kmDZ/Bb
+
+        xOD5AgAA//8DAMrfFk8WAQAA
+
+'
+    http_version: 
+  recorded_at: Thu, 01 Nov 2012 03:40:06 GMT
+recorded_with: VCR 2.3.0
