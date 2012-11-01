@@ -5,27 +5,28 @@ end
 
 ENV["RAILS_ENV"] ||= 'test'
 require File.expand_path("../../config/environment", __FILE__)
-
 require 'rspec/rails'
-require 'rspec/autorun'
-require 'capybara/rspec'
 
-Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
+require_relative 'spec_helper_lite'
 
 RSpec.configure do |config|
-  config.infer_base_class_for_anonymous_controllers = true
-  config.order = :random
-  config.treat_symbols_as_metadata_keys_with_true_values = true
+  config.use_transactional_fixtures = false
+  config.infer_base_class_for_anonymous_controllers = false
 
-  config.before :suite do
-    DatabaseCleaner.strategy = :truncation
+  config.before(:suite) do
+    DatabaseCleaner.strategy = :transaction
+    DatabaseCleaner.clean_with(:truncation)
   end
 
-  config.before :each do
+  config.before(:each) do
     DatabaseCleaner.start
   end
 
-  config.after :each do
+  config.after(:each) do
     DatabaseCleaner.clean
   end
+end
+
+RSpec::Fire.configure do |config|
+  config.verify_constant_names = true
 end
