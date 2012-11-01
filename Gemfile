@@ -24,6 +24,7 @@ group :assets do
 end
 
 group :production do
+  gem 'dalli'
   gem 'pg'
 end
 
