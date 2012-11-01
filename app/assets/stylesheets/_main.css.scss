@@ -98,10 +98,12 @@ section#main {
       } //&.two, &.four
 
       .text {
-        margin: 1em
+        margin: 1em;
+
+        .username {
+          font-size: 1.5em;
+        }
       }
     } //li
   } //#smiles-list
 } //section#main
-
-

@@ -17,7 +17,8 @@
       .text
         %p= raw(tweet.text)
         %small
-          = link_to tweet.username, twitter_url(tweet.username)
+          %span.username
+            = link_to tweet.username, twitter_url(tweet.username)
           %br
           = link_to "#{time_ago_in_words tweet.published_at} ago",
             tweet.url,
