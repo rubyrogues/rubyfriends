@@ -18,8 +18,11 @@
         %p= raw(tweet.text)
         %small
           = link_to tweet.username, twitter_url(tweet.username)
-          on #{tweet.date}
-          = link_to "link", tweet.url
+          %br
+          = link_to "#{time_ago_in_words tweet.published_at} ago",
+            tweet.url,
+            class: :timeago,
+            title: tweet.published_at.iso8601
 
 = paginate(paginated_tweets)
 

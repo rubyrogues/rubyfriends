@@ -10,11 +10,9 @@ describe Tweet::HtmlPresenter do
       username: "joshsusser",
       media_url: "http://p.twimg.com/A6gyJmlCUAA9Il2.jpg",
       image: "A6gyJmlCUAA9Il2.jpg",
-      media_display_url: "pic.twitter.com/cyL9StoS",
-      published_at: Time.parse("2012-01-02 03:04:05")
+      media_display_url: "pic.twitter.com/cyL9StoS"
   }
 
-  its(:date) { should == "Jan 02, 2012" }
   its(:url) { should == tweet.media_display_url }
   its(:username) { should == "@joshsusser" }
 

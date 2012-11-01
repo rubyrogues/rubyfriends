@@ -9,10 +9,6 @@ class Tweet::HtmlPresenter
     Tweet.model_name
   end
 
-  def date
-    published_at.strftime '%b %d, %Y'
-  end
-
   def text
     buffer = ActiveSupport::SafeBuffer.new
     buffer << tweet.tweet_text
