@@ -5,7 +5,8 @@ class RubyfriendsApp
   attr_accessor :default_hashtag, :title, :subtitle
 
   def hashtags
-    [default_hashtag]
+    result = [default_hashtag]
+    result |= [default_hashtag.singularize]
   end
 
   def tweets
