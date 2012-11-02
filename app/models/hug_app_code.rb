@@ -93,6 +93,11 @@ class Tweet
         new_tweet.save!
 
         puts "Created tweet @#{new_tweet.username}: #{new_tweet.tweet_text}"
+
+        if ENV['oauth_token']
+          Twitter.retweet tweet.id
+          puts "Retweeted tweet @#{new_tweet.username}: #{new_tweet.tweet_text}"
+        end
       end
 
     end
