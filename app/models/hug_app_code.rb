@@ -46,7 +46,6 @@ module HugAppScript
       Twitter.search(term, include_entities: true, rpp: 50, result_type: "recent").each do |tweet|
         Tweet.create_or_skip(tweet)
       end
-      sleep(5)
     end
 
     puts "Success!"
@@ -92,6 +91,13 @@ class Tweet
         # it and resave it
         new_tweet.remote_image_url = @media_url
         new_tweet.save!
+
+        puts "Created tweet @#{new_tweet.username}: #{new_tweet.tweet_text}"
+
+        if ENV['oauth_token']
+          Twitter.retweet tweet.id
+          puts "Retweeted tweet @#{new_tweet.username}: #{new_tweet.tweet_text}"
+        end
       end
 
     end

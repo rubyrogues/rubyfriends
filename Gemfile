@@ -22,7 +22,12 @@ group :assets do
 end
 
 group :production do
+  gem 'dalli'
   gem 'pg'
+end
+
+group :development do
+  gem 'foreman'
 end
 
 group :development, :test do

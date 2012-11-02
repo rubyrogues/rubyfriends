@@ -13,7 +13,6 @@ describe Tweet::HtmlPresenter do
       media_display_url: "pic.twitter.com/cyL9StoS"
   }
 
-  its(:url) { should == tweet.media_display_url }
   its(:username) { should == "@joshsusser" }
 
   describe "#text" do
@@ -32,6 +31,15 @@ describe Tweet::HtmlPresenter do
       tweet.tweet_text = "this < is > a & test"
 
       should == "this &lt; is &gt; a &amp; test"
+    end
+  end
+
+  describe "#url" do
+    subject(:url) { presenter.url }
+
+    it "adds a protocol if missing" do
+      tweet.media_display_url = "pic.twitter.com/cyL9StoS"
+      should match  %r{^http://}
     end
   end
 end
