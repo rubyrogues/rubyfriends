@@ -8,8 +8,8 @@ Check out all our wonderful [#RubyFriends](http://www.rubyfriends.com).
 
 ## Thanks
 
-* Original FridayHug code/idea by @krsmurata
-* RubyFriends idea by @joshsusser
-* Initial implementation by @etrom
-* Maintained by @etrom and @justincampbell
+* Original FridayHug code/idea by [Kristopher Murata](http://twitter.com/krsmurata)
+* RubyFriends idea by [Josh Susser](http://twitter.com/joshsusser)
+* Initial implementation by [Erik Trom](http://twitter.com/trombom)
+* Maintained by [Erik Trom](http://twitter.com/trombom) and [Justin Campbell](http://twitter.com/justincampbell)
 
