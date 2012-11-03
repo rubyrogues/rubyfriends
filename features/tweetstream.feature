@@ -4,7 +4,7 @@ Feature: Tweetstream
   As a background task
   I want to continuously stream tweets into the app
 
-  @wip
+  # @wip
   Scenario: persist tweetstream
      When I persist the tweetstream to the app
      Then the app should fill with tweets

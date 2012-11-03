@@ -1,5 +1,6 @@
 require_relative 'rubyfriends_app'
 class Tweet < ActiveRecord::Base
+  attr_accessor :app
 
   default_scope order("published_at desc")
 
@@ -16,9 +17,5 @@ class Tweet < ActiveRecord::Base
     where(published: true).where("published_at is not null")
   end
 
-  attr_writer :app
 
-  def app
-    @app ||= RUBYFRIENDS_APP
-  end
 end

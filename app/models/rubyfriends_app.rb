@@ -1,7 +1,7 @@
 require 'logger'
 
-TWEETSTREAM_LOGGER ||= Logger.new("log/tweetstream_processor_#{Rails.env}.log")
-TWEETSTREAM_LOGGER.level = Logger::INFO
+TWEET_PROCESSOR_LOGGER ||= Logger.new("log/tweet_processor_#{ENV["RAILS_ENV"]}.log")
+TWEET_PROCESSOR_LOGGER.level = Logger::INFO
 
 require_relative 'tweet_refresher'
 require_relative 'tweet_streamer'

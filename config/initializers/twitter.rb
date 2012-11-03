@@ -15,7 +15,7 @@ if Rails.env.production?
   end
 end
 
-if Rails.env.development? or Rails.env.test?
+if Rails.env.development? or Rails.env.test? or Rails.env.cucumber?
   Twitter.configure do |config|
     config.consumer_key = Settings.twitter.consumer_key
     config.consumer_secret = Settings.twitter.consumer_secret

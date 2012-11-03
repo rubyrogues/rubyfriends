@@ -1,9 +1,6 @@
 require_relative '../spec_helper_lite'
 require_relative '../../app/models/tweet_streamer'
 
-
-
-
 describe TweetStreamer do
   let(:tweet_processor_dbl) { fire_double('TweetProcessor') }
   subject(:tweet_streamer) { described_class.new(tweet_processor_dbl) }
@@ -25,4 +22,5 @@ describe TweetStreamer do
       tweet_streamer.stream
     end
   end
+
 end

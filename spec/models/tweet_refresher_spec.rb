@@ -1,9 +1,6 @@
 require_relative '../spec_helper_lite'
 require_relative '../../app/models/tweet_refresher'
 
-
-
-
 describe TweetRefresher do
   let(:tweet_processor_dbl) { fire_double('TweetProcessor') }
   subject(:tweet_refresher) { described_class.new(tweet_processor_dbl) }
