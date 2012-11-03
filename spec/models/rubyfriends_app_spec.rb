@@ -84,9 +84,6 @@ describe RubyfriendsApp do
     end
 
     describe '#refresh_tweets' do
-      xit 'sets the tweet processors app reference to itself' do
-        app.refresh_tweets.app.should eq app
-      end
       it 'initializes tweet refresher with a tweet processor' do
         tweet_processor_dbl.should_receive(:call).ordered
           .with(app)
@@ -99,9 +96,6 @@ describe RubyfriendsApp do
     end
 
     describe '#persist_tweetstream' do
-      xit 'sets the tweet processors app reference to itself' do
-        app.refresh_tweets.app.should eq app
-      end
       it 'initializes tweet refresher with a tweet processor' do
         tweet_processor_dbl.should_receive(:call).ordered
           .with(app)
