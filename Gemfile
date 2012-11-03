@@ -9,8 +9,11 @@ gem 'jquery-rails'
 gem 'kaminari'
 gem 'newrelic_rpm'
 gem 'rmagick'
+gem 'rails_config', '0.2.5'
 gem 'thin'
-gem 'twitter', '~> 2.1.0'
+gem 'twitter'
+
+gem 'tweetstream'
 
 group :assets do
   gem 'bootstrap-sass', '~> 2.1.0.0'
@@ -52,6 +55,7 @@ group :test do
   gem 'pry-rails'
   gem 'rb-fsevent', '~> 0.9.1'
   gem 'rspec-fire'
+  gem 'rspec-given'
   gem 'simplecov'
   gem 'vcr'
   gem 'webmock'

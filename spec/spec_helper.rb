@@ -12,6 +12,8 @@ require_relative 'spec_helper_lite'
 RSpec.configure do |config|
   config.use_transactional_fixtures = false
   config.infer_base_class_for_anonymous_controllers = false
+  config.filter = nil # remove filters when running all so we don't leave one
+                      # on by accident until to late
 
   config.before(:suite) do
     DatabaseCleaner.strategy = :transaction

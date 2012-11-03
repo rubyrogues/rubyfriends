@@ -6,14 +6,7 @@ Feature: Refresh tweets
     with the relevant hashtags
 
   @gui
-  Scenario: populate the app with tweets
+  Scenario: populate the app with tweets from twitter rest api
     Given the app knows about 0 tweets
     When I manually run the refresh tweets task
     Then the app should know about more than 0 tweets
-
-  Scenario: populate the app with tweets
-    Given the app knows about 0 tweets
-    When I manually run the refresh tweets task
-    Then the app should know about more than 0 tweets
-
-  # terrible duplication

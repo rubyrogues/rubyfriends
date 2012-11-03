@@ -43,7 +43,7 @@ module HugAppScript
 
     terms.each do |term|
       puts "Search: #{term}"
-      Twitter.search(term, include_entities: true, rpp: 50, result_type: "recent").each do |tweet|
+      Twitter.client.search(term, include_entities: true, count: '100', result_type: "recent").results.each do |tweet|
         Tweet.create_or_skip(tweet)
       end
     end
@@ -57,6 +57,10 @@ class Tweet
   extend HugAppHelpers
 
   def self.create_or_skip(tweet, skip_tweet_validation = false)
+    logger = Logger.new('log/tweetstream_storage.log')
+    logger.level = Logger::INFO
+    logger.info("your made it to the create or skip")
+
 
     if tweet.media && tweet.media.empty?
       tweet.expanded_urls.each do |expanded_url|

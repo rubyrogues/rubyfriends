@@ -1,4 +1,4 @@
-require 'spec_helper_nulldb'
+require_relative '../spec_helper_db'
 
 require "rspec/mocks/standalone"
 stub_const("MOUNT_IMAGE_UPLOADER", true)
