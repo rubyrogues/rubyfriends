@@ -8,8 +8,10 @@ class TweetProcessor
 
   def process(tweet)
     TWEETSTREAM_LOGGER.info(tweet)
+
     new_tweet = app.new_entry(attrs_hash_for(tweet))
     new_tweet.publish
+
     self
   end
 
