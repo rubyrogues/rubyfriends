@@ -112,3 +112,26 @@ hr {
   width: 100%;
   display: hidden;
 }
+
+@media screen and (max-width: 820px) {
+  #wrapper {
+    padding: 0;
+  }
+
+  section#main {
+    h3 span {
+      display: block;
+      margin-top: 15px;
+    }
+
+    a#learn-more {
+      width: 90%;
+    }
+
+    #smiles-list {
+      li {
+        @include span-columns(6);
+      }
+    }
+  }
+}
