@@ -1,1 +1,7 @@
 en:
+  views:
+    pagination:
+      first: "&laquo;"
+      previous: "&lsaquo;"
+      next: "&rsaquo;"
+      last: "&raquo;"
