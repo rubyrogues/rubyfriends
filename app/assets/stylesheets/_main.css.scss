@@ -130,7 +130,7 @@ hr {
 
     #smiles-list {
       li {
-        @include span-columns(6);
+        @include span-columns($total-columns);
       }
     }
   }
