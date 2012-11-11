@@ -109,6 +109,7 @@ section#main {
 
   .pagination {
     @include span-columns($total-columns);
+    text-align: center;
   }
 } //section#main
 
