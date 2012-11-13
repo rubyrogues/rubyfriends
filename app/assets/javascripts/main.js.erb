@@ -5,7 +5,7 @@ jQuery(function($) {
     top: '2%',
     // left: 0,
     target: '#overlay',
-    fixed: false,
+    fixed: true,
     onBeforeLoad: function() {
       $("#overlay .contentWrap").html('<div><p>One Second...</p><img alt="Spinner" src="<%= asset_path('spinner2.gif') %>" /></div>');
       // grab wrapper element inside content
