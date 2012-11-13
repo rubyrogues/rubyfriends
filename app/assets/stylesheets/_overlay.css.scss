@@ -1,7 +1,7 @@
 @mixin close-button {
   @include sprites-sprite(close);
   position: fixed;
-  left: 50%; top: 3%;
+  left: 50%; top: 2%;
   margin-left: -17px;
   cursor:pointer;
   height:35px;
@@ -22,8 +22,11 @@
 
   img {
     @include border-radius(10px);
+    background: white;
+    border: 20px solid white;
+    padding-top: 15px;
     max-width: 95%;
-    max-height: 95%;
+    max-height: 90%;
   } //img
 } //.overlay
 
