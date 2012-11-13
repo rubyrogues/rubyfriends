@@ -30,6 +30,17 @@
   } //img
 } //.overlay
 
+@media screen and (max-width: 820px) {
+  #overlay {
+    width: 98%;
+
+    img {
+      padding: 0;
+      border: 0;
+    } //img
+  } //#overlay
+} //@media
+
 .click_to_ajax_overlay {
   cursor:pointer;
 } //.click_to_ajax_overlay
