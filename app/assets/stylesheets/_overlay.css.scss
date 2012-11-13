@@ -10,6 +10,7 @@
 
 #overlay {
   width: 95%;
+  max-height: 95%;
   display:none;
   padding:35px;
   @include border-radius(10px);
