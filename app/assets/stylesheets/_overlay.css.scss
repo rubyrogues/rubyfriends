@@ -12,12 +12,16 @@
   width: 95%;
   max-height: 95%;
   display:none;
-  padding:35px;
-  @include border-radius(10px);
   outline:none;
+  text-align: center;
   .close {
     @include close-button;
   } //.close
+  img {
+    @include border-radius(10px);
+    max-width: 95%;
+    max-height: 95%;
+  } //img
 } //.overlay
 
 .click_to_ajax_overlay {
