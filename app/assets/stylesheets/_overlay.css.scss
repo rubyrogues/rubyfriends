@@ -15,9 +15,11 @@
   display:none;
   outline:none;
   text-align: center;
+
   .close {
     @include close-button;
   } //.close
+
   img {
     @include border-radius(10px);
     max-width: 95%;
