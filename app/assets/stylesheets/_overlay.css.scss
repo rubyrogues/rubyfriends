@@ -1,7 +1,8 @@
 @mixin close-button {
   @include sprites-sprite(close);
-  position:absolute;
-  left:5px; top:5px;
+  position: fixed;
+  left: 50%; top: 3%;
+  margin-left: -17px;
   cursor:pointer;
   height:35px;
   width:35px;
