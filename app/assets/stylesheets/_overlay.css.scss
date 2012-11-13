@@ -9,6 +9,7 @@
 }
 
 #overlay {
+  width: 95%;
   display:none;
   padding:35px;
   @include border-radius(10px);
