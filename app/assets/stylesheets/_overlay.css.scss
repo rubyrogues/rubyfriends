@@ -1,7 +1,8 @@
 @mixin close-button {
   @include sprites-sprite(close);
-  position:absolute;
-  left:5px; top:5px;
+  position: fixed;
+  left: 50%; top: 2%;
+  margin-left: -17px;
   cursor:pointer;
   height:35px;
   width:35px;
@@ -9,14 +10,36 @@
 }
 
 #overlay {
+  width: 40%;
+  max-height: 95%;
   display:none;
-  padding:35px;
-  @include border-radius(10px);
   outline:none;
+  text-align: center;
+
   .close {
     @include close-button;
   } //.close
+
+  img {
+    @include border-radius(10px);
+    background: white;
+    border: 20px solid white;
+    padding-top: 15px;
+    max-width: 95%;
+    max-height: 90%;
+  } //img
 } //.overlay
+
+@media screen and (max-width: 820px) {
+  #overlay {
+    width: 98%;
+
+    img {
+      padding: 0;
+      border: 0;
+    } //img
+  } //#overlay
+} //@media
 
 .click_to_ajax_overlay {
   cursor:pointer;
