@@ -30,7 +30,7 @@
   } //img
 } //.overlay
 
-@media screen and (max-width: 820px) {
+@media screen and (max-width: $mobile-width) {
   #overlay {
     width: 98%;
 

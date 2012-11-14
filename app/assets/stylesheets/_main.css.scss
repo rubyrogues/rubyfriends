@@ -118,7 +118,7 @@ hr {
   display: hidden;
 }
 
-@media screen and (max-width: 820px) {
+@media screen and (max-width: $mobile-width) {
   #wrapper {
     padding: 0;
   }
