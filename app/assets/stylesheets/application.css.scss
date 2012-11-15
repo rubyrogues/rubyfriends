@@ -28,6 +28,7 @@ $mobile-width: 820px;
 
 @import "main";
 @import "overlay";
+@import "mobile";
 
 body {
   @include establish-baseline; // establish compass vertical rhythm

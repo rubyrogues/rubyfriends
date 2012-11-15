@@ -1,0 +1,31 @@
+@media screen and (max-width: $mobile-width) {
+  #wrapper {
+    padding: 0;
+  } //#wrapper
+
+  section#main {
+    h3 span {
+      display: block;
+      margin-top: 15px;
+    } //#h3 span
+
+    a#learn-more {
+      width: 90%;
+    } //a#learn-more
+
+    #smiles-list {
+      li {
+        @include span-columns($total-columns);
+      } //li
+    } //#smiles-list
+  } //section#main
+
+  #overlay {
+    width: 98%;
+
+    img {
+      padding: 0;
+      border: 0;
+    } //img
+  } //#overlay
+}
