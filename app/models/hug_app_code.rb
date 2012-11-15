@@ -1,24 +1,39 @@
 module HugAppHelpers
 
   def is_image?(url)
-    url =~ /twitpic.com|yfrog.com|instagr.am|img.ly|ow.ly|.jpg|.jpeg|.gif|.png/i
+    url =~ Regexp.union(supported_image_formats.keys)
   end
 
   def get_image_url(url)
-    case url
-      when /twitpic.com/i
-        "http://twitpic.com/show/full/#{url.split('/')[3]}"
-      when /yfrog.com/i
-        "http://yfrog.com/#{url.split('/')[3]}:medium"
-      when /instagr.am/i
-        "http://instagr.am/p/#{url.split('/')[4]}/media?size=m"
-      when /img.ly/i
-        get_imgly_url(url)
-      when /ow.ly/i
-        "http://static.ow.ly/photos/normal/#{url.split('/')[4]}.jpg"
-      when /.jpg|.jpeg|.gif|.png/i
-        url
+    supported_image_formats.each do |format, conversion|
+      return conversion.call(url) if url =~ format
     end
+  end
+
+  private
+
+  def supported_image_formats
+    {
+      /twitpic.com/ => ->(u) {
+        "http://twitpic.com/show/full/#{u.split('/')[3]}"
+      },
+      /instagr.am/ => ->(u) {
+        "http://instagr.am/p/#{u.split('/')[4]}/media?size=m"
+      },
+      /ow.ly/ => ->(u) {
+        "http://static.ow.ly/photos/normal/#{u.split('/')[4]}.jpg"
+      },
+      /d.pr/ => ->(u) {
+        "#{u}+"
+      },
+      /img.ly/ => ->(u) {
+        get_imgly_url(u)
+      },
+      /yfrog.com/ => ->(u) {
+        "http://yfrog.com/#{u.split('/')[3]}:medium"
+      },
+      /.jpg|.jpeg|.gif|.png/ => ->(u) { u }
+    }
   end
 
   def get_imgly_url(url)
