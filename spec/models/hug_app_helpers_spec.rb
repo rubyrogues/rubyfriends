@@ -36,5 +36,12 @@ describe HugAppHelpers do
 
       Helpers.get_image_url(tweet_url).should == image_url
     end
+
+    it 'returns the image url when given a droplr url' do
+      tweet_url = 'http://d.pr/i/IMAGEID'
+      image_url = 'http://d.pr/i/IMAGEID+'
+
+      Helpers.get_image_url(tweet_url).should == image_url
+    end
   end
 end

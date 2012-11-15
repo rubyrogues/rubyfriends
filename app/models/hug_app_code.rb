@@ -1,7 +1,7 @@
 module HugAppHelpers
 
   def is_image?(url)
-    url =~ /twitpic.com|yfrog.com|instagr.am|img.ly|ow.ly|.jpg|.jpeg|.gif|.png/i
+    url =~ /twitpic.com|yfrog.com|instagr.am|img.ly|ow.ly|d.pr|.jpg|.jpeg|.gif|.png/i
   end
 
   def get_image_url(url)
@@ -16,6 +16,8 @@ module HugAppHelpers
         get_imgly_url(url)
       when /ow.ly/i
         "http://static.ow.ly/photos/normal/#{url.split('/')[4]}.jpg"
+      when /d.pr/i
+        "#{url}+"
       when /.jpg|.jpeg|.gif|.png/i
         url
     end
