@@ -25,3 +25,5 @@ public/test
 public/cucumber
 
 coverage/
+
+*.pid

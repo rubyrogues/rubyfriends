@@ -8,11 +8,12 @@ gem 'haml-rails'
 gem 'jquery-rails'
 gem 'kaminari'
 gem 'newrelic_rpm'
-gem 'rails_config', '0.2.5'
 gem 'rmagick'
+gem 'rails_config', '0.2.5'
 gem 'thin'
-gem 'twitter', '~> 2.1.0'
-gem 'whenever', require: false
+gem 'twitter'
+
+gem 'tweetstream'
 
 group :assets do
   gem 'bootstrap-sass', '~> 2.1.0.0'
@@ -38,6 +39,8 @@ group :development, :test do
 end
 
 group :test do
+  gem 'activerecord-nulldb-adapter',
+      :git => "git://github.com/avdi/nulldb.git"
   gem 'cucumber-rails', require: false
   gem 'database_cleaner'
   gem 'growl'
@@ -51,8 +54,9 @@ group :test do
   gem 'pry-doc'
   gem 'pry-rails'
   gem 'rb-fsevent', '~> 0.9.1'
+  gem 'rspec-fire'
+  gem 'rspec-given'
   gem 'simplecov'
-  gem 'timecop'
   gem 'vcr'
   gem 'webmock'
 end

@@ -12,7 +12,7 @@ class TweetsController < ApplicationController
 
     helper_method :paginated_tweets
     def paginated_tweets
-      @paginated_tweets ||= rubyfriends_app.paginated_tweets(params[:page])
+      @paginated_tweets ||= rubyfriends_app.paginated_entries(params[:page])
     end
 
 end

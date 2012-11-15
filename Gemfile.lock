@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/avdi/nulldb.git
+  revision: fa3487a2eec39096814cc2d27e9a5a68e7562ace
+  specs:
+    activerecord-nulldb-adapter (0.2.1)
+      activerecord (>= 2.0.0)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -32,19 +39,18 @@ GEM
     arel (3.0.2)
     bootstrap-sass (2.1.0.1)
     builder (3.0.4)
-    capybara (1.1.2)
+    capybara (1.1.3)
       mime-types (>= 1.16)
       nokogiri (>= 1.3.3)
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       selenium-webdriver (~> 2.0)
       xpath (~> 0.1.4)
-    carrierwave (0.6.2)
+    carrierwave (0.7.0)
       activemodel (>= 3.2.0)
       activesupport (>= 3.2.0)
     childprocess (0.3.6)
       ffi (~> 1.0, >= 1.0.6)
-    chronic (0.6.7)
     chunky_png (1.2.6)
     coderay (1.0.8)
     coffee-rails (3.2.2)
@@ -60,6 +66,7 @@ GEM
       sass (~> 3.1)
     compass-rails (1.0.3)
       compass (>= 0.12.2, < 0.14)
+    cookiejar (0.3.0)
     crack (0.3.1)
     cucumber (1.2.1)
       builder (>= 2.1.2)
@@ -74,6 +81,18 @@ GEM
     dalli (2.3.0)
     database_cleaner (0.9.1)
     diff-lcs (1.1.3)
+    em-http-request (1.0.3)
+      addressable (>= 2.2.3)
+      cookiejar
+      em-socksify
+      eventmachine (>= 1.0.0.beta.4)
+      http_parser.rb (>= 0.5.3)
+    em-socksify (0.2.1)
+      eventmachine (>= 1.0.0.beta.4)
+    em-twitter (0.2.1)
+      eventmachine (~> 1.0)
+      http_parser.rb (~> 0.5)
+      simple_oauth (~> 0.1)
     em-websocket (0.3.8)
       addressable (>= 2.1.1)
       eventmachine (>= 0.12.9)
@@ -97,7 +116,7 @@ GEM
       ruby-hmac
     foreman (0.60.2)
       thor (>= 0.13.6)
-    formatador (0.2.3)
+    formatador (0.2.4)
     fssm (0.2.9)
     gherkin (2.11.5)
       json (>= 1.4.6)
@@ -105,14 +124,14 @@ GEM
     guard (1.4.0)
       listen (>= 0.4.2)
       thor (>= 0.14.6)
-    guard-cucumber (1.2.0)
+    guard-cucumber (1.2.2)
       cucumber (>= 1.2.0)
       guard (>= 1.1.0)
     guard-livereload (1.0.3)
       em-websocket (>= 0.2.0)
       guard (>= 1.1.0)
       multi_json (~> 1.0)
-    guard-rspec (2.1.0)
+    guard-rspec (2.1.1)
       guard (>= 1.1)
       rspec (~> 2.11)
     haml (3.1.7)
@@ -122,6 +141,7 @@ GEM
       haml (~> 3.1)
       railties (>= 3.1, < 4.1)
     hike (1.2.1)
+    http_parser.rb (0.5.3)
     i18n (0.6.1)
     journey (1.0.4)
     jquery-rails (2.1.3)
@@ -147,7 +167,7 @@ GEM
     net-scp (1.0.4)
       net-ssh (>= 1.99.1)
     net-ssh (2.6.1)
-    newrelic_rpm (3.4.2.1)
+    newrelic_rpm (3.5.0.1)
     nokogiri (1.5.5)
     pg (0.14.1)
     polyglot (0.3.3)
@@ -188,7 +208,7 @@ GEM
     rb-fsevent (0.9.2)
     rdoc (3.12)
       json (~> 1.4)
-    rmagick (2.12.2)
+    rmagick (2.13.1)
     rspec (2.11.0)
       rspec-core (~> 2.11.0)
       rspec-expectations (~> 2.11.0)
@@ -196,6 +216,10 @@ GEM
     rspec-core (2.11.1)
     rspec-expectations (2.11.3)
       diff-lcs (~> 1.1.3)
+    rspec-fire (1.1.3)
+      rspec (~> 2.11)
+    rspec-given (2.1.0)
+      rspec (> 1.2.8)
     rspec-mocks (2.11.3)
     rspec-rails (2.11.4)
       actionpack (>= 3.0)
@@ -215,10 +239,10 @@ GEM
       multi_json (~> 1.0)
       rubyzip
     simple_oauth (0.1.9)
-    simplecov (0.6.4)
+    simplecov (0.7.1)
       multi_json (~> 1.0)
-      simplecov-html (~> 0.5.3)
-    simplecov-html (0.5.3)
+      simplecov-html (~> 0.7.1)
+    simplecov-html (0.7.1)
     slop (3.3.3)
     sprockets (2.1.3)
       hike (~> 1.2)
@@ -234,26 +258,27 @@ GEM
       rack (>= 1.0.0)
     thor (0.16.0)
     tilt (1.3.3)
-    timecop (0.5.3)
-    treetop (1.4.11)
+    treetop (1.4.12)
       polyglot
       polyglot (>= 0.3.1)
-    twitter (2.1.1)
-      activesupport (>= 2.3.9, < 4)
-      faraday (~> 0.7)
-      multi_json (~> 1.0)
-      simple_oauth (~> 0.1)
-    tzinfo (0.3.33)
+    tweetstream (2.3.0)
+      daemons (~> 1.1)
+      em-http-request (~> 1.0.2)
+      em-twitter (~> 0.2)
+      multi_json (~> 1.3)
+      twitter (~> 4.0)
+    twitter (4.2.0)
+      faraday (~> 0.8)
+      multi_json (~> 1.3)
+      simple_oauth (~> 0.1.6)
+    tzinfo (0.3.34)
     uglifier (1.3.0)
       execjs (>= 0.3.0)
       multi_json (~> 1.0, >= 1.0.2)
-    vcr (2.2.5)
+    vcr (2.3.0)
     webmock (1.8.11)
       addressable (>= 2.2.7)
       crack (>= 0.1.7)
-    whenever (0.7.3)
-      activesupport (>= 2.3.4)
-      chronic (~> 0.6.3)
     xpath (0.1.4)
       nokogiri (~> 1.3)
     yard (0.8.3)
@@ -262,6 +287,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activerecord-nulldb-adapter!
   bootstrap-sass (~> 2.1.0.0)
   carrierwave
   coffee-rails (~> 3.2.1)
@@ -290,15 +316,16 @@ DEPENDENCIES
   rails_config (= 0.2.5)
   rb-fsevent (~> 0.9.1)
   rmagick
+  rspec-fire
+  rspec-given
   rspec-rails
   sass-rails (~> 3.2.3)
   simplecov
   sqlite3
   susy
   thin
-  timecop
-  twitter (~> 2.1.0)
+  tweetstream
+  twitter
   uglifier (>= 1.0.3)
   vcr
   webmock
-  whenever

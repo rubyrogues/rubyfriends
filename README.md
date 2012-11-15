@@ -12,4 +12,3 @@ Check out all our wonderful [#RubyFriends](http://www.rubyfriends.com).
 * RubyFriends idea by [Josh Susser](http://twitter.com/joshsusser)
 * Initial implementation by [Erik Trom](http://twitter.com/trombom)
 * Maintained by [Erik Trom](http://twitter.com/trombom) and [Justin Campbell](http://twitter.com/justincampbell)
-
