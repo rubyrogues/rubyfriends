@@ -3,6 +3,20 @@ require 'spec_helper'
 describe HugAppHelpers do
   Helpers = Class.new.extend(HugAppHelpers)
 
+  describe '.is_image?' do
+    supported_image_urls = %w[
+      twitpic.com yfrog.com instagr.am img.ly ow.ly d.pr .jpg .jpeg .gif .png
+    ].each do |image_url|
+      it "returns true for supported url #{image_url}" do
+        Helpers.is_image?(image_url).should be_true
+      end
+    end
+
+    it 'returns false for unsupported url' do
+      Helpers.is_image?('http://un-supported-url.com').should be_false
+    end
+  end
+
   describe '.get_image_url' do
     it 'returns the image url when given a direct image url' do
       image_url = 'http://awesome-pics.com/photo.jpg'
