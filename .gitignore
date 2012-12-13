@@ -17,6 +17,7 @@
 .powrc
 *.tmproj
 .sass-cache
+*.swp
 
 public/assets
 public/uploads
