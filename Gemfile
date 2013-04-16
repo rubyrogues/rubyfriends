@@ -20,7 +20,7 @@ gem 'figaro'
 # web server
 gem 'thin'
 # twitter api
-gem 'twitter', :git => 'https://github.com/sferik/twitter.git', :tag => 'v2.1.1'
+gem 'twitter'
 # cron jobs
 gem 'whenever', require: false
 
