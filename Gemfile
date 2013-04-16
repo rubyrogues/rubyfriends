@@ -9,7 +9,7 @@ gem 'jquery-rails'
 gem 'kaminari'
 gem 'newrelic_rpm'
 gem 'rails_config', '0.2.5'
-gem 'rmagick'
+gem 'mini_magick'
 gem 'thin'
 gem 'twitter', :git => 'https://github.com/sferik/twitter.git', :tag => 'v2.1.1'
 gem 'whenever', require: false
