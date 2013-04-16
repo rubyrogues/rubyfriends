@@ -1,4 +1,4 @@
-@tweets.map! { |tweet| Tweet::FeedPresenter.new tweet }
+@tweets.map! { |tweet| Tweet::FeedPresenter.new(tweet) }
 
 atom_feed root_url: tweets_url do |feed|
   feed.title "#RubyFriends"
