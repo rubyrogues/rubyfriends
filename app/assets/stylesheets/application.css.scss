@@ -20,12 +20,15 @@ $full-break: 12;
 $base-font-size:$baseFontSize; //14px
 $base-line-height:$baseLineHeight; //20px
 
+$mobile-width: 820px;
+
 // mixins first (or anything used by following files, so sprites too)
 @import "mixins";
 @import "sprites/*.png";
 
 @import "main";
 @import "overlay";
+@import "mobile";
 
 body {
   @include establish-baseline; // establish compass vertical rhythm
