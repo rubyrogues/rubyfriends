@@ -15,8 +15,6 @@ gem 'jquery-rails'
 gem 'kaminari'
 # diagnostics
 gem 'newrelic_rpm'
-# configuration
-gem 'figaro'
 # web server
 gem 'thin'
 # twitter api
@@ -49,6 +47,8 @@ group :development do
 end
 
 group :development, :test do
+  # configuration
+  gem 'figaro'
   # spec testing
   gem 'rspec-rails'
   # db
