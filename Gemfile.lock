@@ -1,14 +1,3 @@
-GIT
-  remote: https://github.com/sferik/twitter.git
-  revision: e72ef3b6a255dbdabe4e5d81737811e29d828d77
-  tag: v2.1.1
-  specs:
-    twitter (2.1.1)
-      activesupport (>= 2.3.9, < 4)
-      faraday (~> 0.7)
-      multi_json (~> 1.0)
-      simple_oauth (~> 0.1)
-
 GEM
   remote: http://rubygems.org/
   specs:
@@ -39,22 +28,19 @@ GEM
     activesupport (3.2.12)
       i18n (~> 0.6)
       multi_json (~> 1.0)
-    addressable (2.3.2)
+    addressable (2.3.4)
     arel (3.0.2)
     bootstrap-sass (2.1.0.1)
     builder (3.0.4)
-    capybara (1.1.2)
+    capybara (2.1.0)
       mime-types (>= 1.16)
       nokogiri (>= 1.3.3)
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
-      selenium-webdriver (~> 2.0)
-      xpath (~> 0.1.4)
+      xpath (~> 2.0)
     carrierwave (0.6.2)
       activemodel (>= 3.2.0)
       activesupport (>= 3.2.0)
-    childprocess (0.3.6)
-      ffi (~> 1.0, >= 1.0.6)
     chronic (0.6.7)
     chunky_png (1.2.6)
     coderay (1.0.8)
@@ -93,9 +79,11 @@ GEM
     excon (0.16.7)
     execjs (1.4.0)
       multi_json (~> 1.0)
-    faraday (0.8.4)
+    faraday (0.8.7)
       multipart-post (~> 1.1)
-    ffi (1.1.5)
+    figaro (0.6.3)
+      bundler (~> 1.0)
+      rails (>= 3, < 5)
     fog (1.6.0)
       builder
       excon (~> 0.14)
@@ -144,24 +132,22 @@ GEM
       activesupport (>= 3.0.0)
     launchy (2.1.2)
       addressable (~> 2.3)
-    libwebsocket (0.1.5)
-      addressable
     listen (0.5.3)
     mail (2.4.4)
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     method_source (0.8.1)
-    mime-types (1.21)
+    mime-types (1.22)
     mini_magick (3.5.0)
       subexec (~> 0.2.1)
-    multi_json (1.6.0)
-    multipart-post (1.1.5)
+    multi_json (1.7.2)
+    multipart-post (1.2.0)
     net-scp (1.0.4)
       net-ssh (>= 1.99.1)
     net-ssh (2.6.1)
     newrelic_rpm (3.4.2.1)
-    nokogiri (1.5.5)
+    nokogiri (1.5.9)
     pg (0.14.1)
     polyglot (0.3.3)
     pry (0.9.10)
@@ -188,8 +174,6 @@ GEM
       activesupport (= 3.2.12)
       bundler (~> 1.0)
       railties (= 3.2.12)
-    rails_config (0.2.5)
-      activesupport (>= 3.0)
     railties (3.2.12)
       actionpack (= 3.2.12)
       activesupport (= 3.2.12)
@@ -215,18 +199,12 @@ GEM
       railties (>= 3.0)
       rspec (~> 2.11.0)
     ruby-hmac (0.4.0)
-    rubyzip (0.9.9)
     sass (3.2.1)
     sass-rails (3.2.5)
       railties (~> 3.2.0)
       sass (>= 3.1.10)
       tilt (~> 1.3)
-    selenium-webdriver (2.25.0)
-      childprocess (>= 0.2.5)
-      libwebsocket (~> 0.1.3)
-      multi_json (~> 1.0)
-      rubyzip
-    simple_oauth (0.1.9)
+    simple_oauth (0.2.0)
     simplecov (0.6.4)
       multi_json (~> 1.0)
       simplecov-html (~> 0.5.3)
@@ -252,6 +230,10 @@ GEM
     treetop (1.4.12)
       polyglot
       polyglot (>= 0.3.1)
+    twitter (4.6.2)
+      faraday (~> 0.8, < 0.10)
+      multi_json (~> 1.0)
+      simple_oauth (~> 0.2)
     tzinfo (0.3.35)
     uglifier (1.3.0)
       execjs (>= 0.3.0)
@@ -263,7 +245,7 @@ GEM
     whenever (0.7.3)
       activesupport (>= 2.3.4)
       chronic (~> 0.6.3)
-    xpath (0.1.4)
+    xpath (2.0.0)
       nokogiri (~> 1.3)
     yard (0.8.3)
 
@@ -278,6 +260,7 @@ DEPENDENCIES
   cucumber-rails
   dalli
   database_cleaner
+  figaro
   fog
   foreman
   growl
@@ -297,7 +280,6 @@ DEPENDENCIES
   pry-doc
   pry-rails
   rails (= 3.2.12)
-  rails_config (= 0.2.5)
   rb-fsevent (~> 0.9.1)
   rspec-rails
   sass-rails (~> 3.2.3)
@@ -306,7 +288,7 @@ DEPENDENCIES
   susy
   thin
   timecop
-  twitter!
+  twitter
   uglifier (>= 1.0.3)
   vcr
   webmock
