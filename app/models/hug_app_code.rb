@@ -58,7 +58,7 @@ module HugAppScript
 
     terms.each do |term|
       puts "Search: #{term}"
-      Twitter.search(term, include_entities: true, rpp: 50, result_type: "recent").each do |tweet|
+      Twitter.search(term, include_entities: true, count: 50, result_type: "recent").statuses.each do |tweet|
         Tweet.create_or_skip(tweet)
       end
     end
@@ -74,7 +74,7 @@ class Tweet
   def self.create_or_skip(tweet, skip_tweet_validation = false)
 
     if tweet.media && tweet.media.empty?
-      tweet.expanded_urls.each do |expanded_url|
+      tweet.urls.each do |expanded_url|
         if is_image?(expanded_url)
           @media_url = get_image_url(expanded_url)
           @media_display_url = expanded_url
