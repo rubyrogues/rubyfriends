@@ -1,0 +1,25 @@
+# Add application configuration variables here, as shown below.
+#
+# Rails config
+SECRET_TOKEN: f79b0679785f11473630bc31e8941adc3897d8f2ca91261bb68f782c2c665b2d0d45db4c1c9ee43a50f69f620c152a3cd91029d969f2a9072bf98f7b3ee6bfb6
+# Twitter config
+consumer_key: xxx
+consumer_secret: xxx
+oauth_token: xxx
+oauth_token_secret: xxx
+# image upload
+s3_access_key_id: xxx
+s3_secret_access_key: xxx
+s3_bucket: xxx
+# new relic
+NEW_RELIC_LICENSE_KEY: xxx
+NEW_RELIC_APP_NAME: xxx
+# analytics
+GOOGLE_ANALYTICS_ACCOUNT: UA-xxx
+# optional
+# GOOGLE_ANALYTICS_DOMAIN: xxx
+# optional
+# BUNDLE_GEMFILE:
+# CUCUMBER_FORMAT:
+# NO_RUBYGEMS: false
+# GUARD_NOTIFY: false
