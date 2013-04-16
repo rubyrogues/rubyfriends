@@ -13,7 +13,7 @@ Check out all our wonderful [#RubyFriends](http://www.rubyfriends.com).
 
   ```bash
   $ bundle install
-  $ bundle exec db:create db:migrate
+  $ bundle exec rake db:create db:migrate
   ```
 
   3. Create your feature branch
