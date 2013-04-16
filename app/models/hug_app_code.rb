@@ -109,7 +109,7 @@ class Tweet
 
         puts "Created tweet @#{new_tweet.username}: #{new_tweet.tweet_text}"
 
-        if ENV['oauth_token']
+        if ENV['retweet'] =~ /true/io
           Twitter.retweet tweet.id
           puts "Retweeted tweet @#{new_tweet.username}: #{new_tweet.tweet_text}"
         end
