@@ -11,7 +11,7 @@ gem 'newrelic_rpm'
 gem 'rails_config', '0.2.5'
 gem 'rmagick'
 gem 'thin'
-gem 'twitter', '~> 2.1.0'
+gem 'twitter', :git => 'https://github.com/sferik/twitter.git', :tag => 'v2.1.1'
 gem 'whenever', require: false
 
 group :assets do
