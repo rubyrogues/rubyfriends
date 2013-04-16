@@ -5,6 +5,10 @@ class Tweet::FeedPresenter
     self.tweet = tweet
   end
 
+  extend Forwardable
+  def_delegators  :@tweet, :updated_at, :id, :media_display_url,
+                  :tweet_text, :media_url, :to_param
+
   def self.model_name
     Tweet.model_name
   end
@@ -33,9 +37,4 @@ class Tweet::FeedPresenter
     "@#{tweet.username}"
   end
 
-  private
-
-  def method_missing(*args)
-    tweet.send *args
-  end
 end
