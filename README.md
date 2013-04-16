@@ -15,6 +15,7 @@ Check out all our wonderful [#RubyFriends](http://www.rubyfriends.com).
   $ bundle install
   $ bundle exec rake db:create db:migrate
   # set up your non-version-controlled config file
+  # change the SECRET_TOKEN
   # see https://github.com/sferik/t for getting your twitter credentials
   # at http://dev.twitter.com/apps
   $ cp config/application.example.yml config/application.yml
