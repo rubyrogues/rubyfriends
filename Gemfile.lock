@@ -96,6 +96,9 @@ GEM
     faraday (0.8.4)
       multipart-post (~> 1.1)
     ffi (1.1.5)
+    figaro (0.6.3)
+      bundler (~> 1.0)
+      rails (>= 3, < 5)
     fog (1.6.0)
       builder
       excon (~> 0.14)
@@ -276,6 +279,7 @@ DEPENDENCIES
   cucumber-rails
   dalli
   database_cleaner
+  figaro
   fog
   foreman
   growl
