@@ -13,12 +13,12 @@ Check out all our wonderful [#RubyFriends](http://www.rubyfriends.com).
 
   ```bash
   $ bundle install
-  $ bundle exec rake db:create db:migrate
-  # set up your non-version-controlled config file
-  # change the SECRET_TOKEN
+  $ bundle exec rake bootstrap
+  # edit config/application.yml (not version-controlled)
+  # 1) change the SECRET_TOKEN
+  # 2) add twitter credentials
   # see https://github.com/sferik/t for getting your twitter credentials
   # at http://dev.twitter.com/apps
-  $ cp config/application.example.yml config/application.yml
   $ rake figaro:heroku # if using heroku
   $ rake refresh_tweets
   $ rails s
