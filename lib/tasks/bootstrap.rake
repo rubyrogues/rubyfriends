@@ -7,9 +7,7 @@ namespace :bootstrap do
 
   desc 'Copy any config files that need copying'
   task :copy_config_files do
-    require 'fileutils'
-    FileUtils.cp('config/application.example.yml', 'config/application.yml')
-    STDOUT.puts 'Copied application.yml'
+    cp 'config/application.example.yml', 'config/application.yml'
   end
 
   task :setup_db => [:environment, 'db:migrate', 'db:test:prepare']
