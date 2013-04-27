@@ -57,3 +57,4 @@ Check out all our wonderful [#RubyFriends](http://www.rubyfriends.com).
 * Initial implementation by [Erik Trom](http://twitter.com/trombom)
 * Maintained by [Erik Trom](http://twitter.com/trombom) and [Justin Campbell](http://twitter.com/justincampbell)
 
+## [LICENSE](LICENSE)
