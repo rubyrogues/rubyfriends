@@ -1,6 +1,5 @@
 module ApplicationHelper
-  include TweetUtility
-
+  include TweetHelper
 
   def ajax_overlay
     content_for :javascripts do
