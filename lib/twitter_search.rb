@@ -42,6 +42,7 @@ class TwitterSearch
   # raises Twitter::Error::Unauthorized
   # returns Twitter::SearchResults
   # http://rdoc.info/gems/twitter/Twitter/SearchResults
+  # http://rdoc.info/gems/twitter/Twitter/Tweet
   def search_recent(term)
     Twitter.search(term, include_entities: true, count: 50, result_type: search_result_type)
   end
