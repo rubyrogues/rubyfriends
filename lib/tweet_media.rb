@@ -29,7 +29,7 @@ class TweetMedia
   end
 
   def media_from_tweet_media(tweet_media)
-      @media_display_url = tweet_media.first.display_url
+    @media_display_url = tweet_media.first.display_url
     @media_url = tweet_media.first.media_url
   end
 
