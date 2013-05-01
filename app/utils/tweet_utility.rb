@@ -21,7 +21,7 @@ module TweetUtility
 
   def new_tweets(tweet_statuses)
     tweets_with_media(tweet_statuses).select do |tweet_status|
-      tweet_media_not_saved(tweet_status)
+      not_a_retweet(tweet_status) && tweet_media_not_saved(tweet_status)
     end
   end
 
@@ -31,6 +31,11 @@ module TweetUtility
 
   def tweet_media_not_saved(tweet_status)
     Tweet.where(media_url: tweet_status.media_url).count('id') == 0
+  end
+
+  def not_a_retweet(tweet_status)
+    !tweet_status.retweet? ||
+       !(tweet_status.tweet_text =~ /\ART/o)
   end
 
   def create_tweet(tweet_status)

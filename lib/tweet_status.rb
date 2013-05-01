@@ -36,6 +36,10 @@ class TweetStatus
     true
   end
 
+  def retweet?
+    tweet.retweet?
+  end
+
   private
 
   def tweet_media
