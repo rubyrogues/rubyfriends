@@ -7,6 +7,10 @@ def tweet_utility
   @tweet_utility ||= TweetUtility
 end
 
+def total_tweets
+  TweetHelper.total_tweets
+end
+
 def populate_tweets
   refresh_tweets(cassette: 'populate_tweets')
 end
@@ -21,7 +25,7 @@ end
 
 # populate manually
 Given /^the app knows about (#{CAPTURE_A_NUMBER}) tweets$/ do |expected_count|
-  tweet_utility.total_tweets.should eq expected_count
+  total_tweets.should eq expected_count
 end
 
 When /^I manually run the refresh tweets task$/ do
@@ -29,13 +33,13 @@ When /^I manually run the refresh tweets task$/ do
 end
 
 Then /^the app should know about more than (#{CAPTURE_A_NUMBER}) tweets$/ do |expected_count|
-  tweet_utility.total_tweets.should > expected_count
+  total_tweets.should > expected_count
 end
 
 # refresh every 10 min
 Given /^the app has is populated with a known number of tweets$/ do
   populate_app
-  @original_populated_total_tweets = tweet_utility.total_tweets
+  @original_populated_total_tweets = total_tweets
 end
 
 When /^I wait 10 minutes$/ do
@@ -46,5 +50,5 @@ When /^I wait 10 minutes$/ do
 end
 
 Then /^the app should have more tweets than it did 10 minutes ago$/ do
-  tweet_utility.total_tweets.should > @original_populated_total_tweets
+  total_tweets.should > @original_populated_total_tweets
 end

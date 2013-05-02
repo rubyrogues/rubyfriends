@@ -1,4 +1,5 @@
 module TweetHelper
+  extend self
 
   def twitter_url(term = TWEET_SEARCHER.default_hashtag)
     "https://twitter.com/#!/#{term}"
