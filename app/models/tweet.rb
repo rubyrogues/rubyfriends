@@ -6,4 +6,5 @@ class Tweet < ActiveRecord::Base
   def self.published
     where(published: true).where("published_at is not null")
   end
+
 end

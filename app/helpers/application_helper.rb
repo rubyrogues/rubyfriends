@@ -1,7 +1,5 @@
 module ApplicationHelper
-  def twitter_url(hashtag = rubyfriends_app.default_hashtag)
-    "https://twitter.com/#!/#{hashtag}"
-  end
+  include TweetHelper
 
   def ajax_overlay
     content_for :javascripts do
