@@ -7,7 +7,7 @@
     Share your friendships with the hashtag
     = link_to "#RubyFriends", twitter_url
   %span.shared-smiles-count
-    #{rubyfriends_app.tweets_count} friendships so far!
+    #{total_tweets} friendships so far!
 
 %ul#smiles-list
   - paginated_tweets.map { |tweet| Tweet::HtmlPresenter.new tweet }.each do |tweet|
