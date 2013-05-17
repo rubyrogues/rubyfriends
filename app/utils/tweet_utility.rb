@@ -20,7 +20,11 @@ module TweetUtility
   private
 
   def new_tweets(tweet_statuses)
-    tweets_with_media(tweet_statuses).select do |tweet_status|
+    if tweets_must_have_media?
+      tweets_with_media(tweet_statuses)
+    else
+      tweet_statuses
+    end.select do |tweet_status|
       not_a_retweet(tweet_status) &&
         tweet_media_not_saved(tweet_status) &&
         tweet_already_saved(tweet_status)
@@ -32,7 +36,11 @@ module TweetUtility
   end
 
   def tweet_media_not_saved(tweet_status)
-    Tweet.where(media_url: tweet_status.media_url).count('id') == 0
+    if tweet_status.media_url
+      Tweet.where(media_url: tweet_status.media_url).count('id') == 0
+    else
+      true
+    end
   end
 
   def not_a_retweet(tweet_status)
@@ -75,6 +83,14 @@ module TweetUtility
     end
     tweet.published = true
     tweet
+  end
+
+  def allow_tweets_without_media?
+    ENV['allow_tweets_without_media'] == 'true'
+  end
+
+  def tweets_must_have_media?
+    !allow_tweets_without_media?
   end
 
 end
