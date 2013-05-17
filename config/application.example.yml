@@ -1,6 +1,7 @@
 # Add application configuration variables here, as shown below.
 #
 # Rails config
+debug: false
 SECRET_TOKEN: f79b0679785f11473630bc31e8941adc3897d8f2ca91261bb68f782c2c665b2d0d45db4c1c9ee43a50f69f620c152a3cd91029d969f2a9072bf98f7b3ee6bfb6
 # Twitter config
 consumer_key: xxx
