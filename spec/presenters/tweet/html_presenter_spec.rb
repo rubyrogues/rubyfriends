@@ -4,13 +4,19 @@ describe Tweet::HtmlPresenter do
   subject { presenter }
 
   let(:presenter) { described_class.new tweet }
+  let(:tweet_link) {
+    link = 'http://t.co/cyL9StoS'
+    ExpandUrl.stub(:expand_url).with(link).and_return(link)
+    link
+  }
   let(:tweet) {
-    Tweet.new tweet_id: "263515718753079296",
-      tweet_text: "at @SteelCityRuby with @coreyhaines - one of my favorite #rubyfriends http://t.co/cyL9StoS",
+    Tweet.new(tweet_id: "263515718753079296",
+      tweet_text: "at @SteelCityRuby with @coreyhaines - one of my favorite #rubyfriends #{tweet_link}",
       username: "joshsusser",
       media_url: "http://p.twimg.com/A6gyJmlCUAA9Il2.jpg",
       image: "A6gyJmlCUAA9Il2.jpg",
       media_display_url: "pic.twitter.com/cyL9StoS"
+      )
   }
 
   its(:username) { should == "@joshsusser" }
