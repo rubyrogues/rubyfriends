@@ -13,7 +13,12 @@ class Tweet::HtmlPresenter
     buffer = ActiveSupport::SafeBuffer.new
     buffer << tweet.tweet_text
 
+    # make links anchors
+    buffer.gsub! /(https?[^\s]+)/o,
+                      %q(<a href="\\1" target="_blank">\\1</a>)
+    # link hashtags
     buffer.gsub! /#(\w+)/, '<a href="http://twitter.com/search?q=%23\\1">#\\1</a>'
+    # link users
     buffer.gsub! /@(\w+)/, '<a href="http://twitter.com/\\1">@\\1</a>'
 
     buffer
