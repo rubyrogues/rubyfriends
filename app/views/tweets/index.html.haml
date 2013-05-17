@@ -13,8 +13,9 @@
   - paginated_tweets.map { |tweet| Tweet::HtmlPresenter.new tweet }.each do |tweet|
     - nth = cycle *%w[one two three four]
     %li{class: nth }
-      %a.ajax_overlay{href: tweet_path(tweet.tweet)}
-        = image_tag(tweet.image_url(:thumb).to_s)
+      - if tweet.image_url
+        %a.ajax_overlay{href: tweet_path(tweet.tweet)}
+          = image_tag(tweet.image_url(:thumb).to_s)
       .text
         %p= raw(tweet.text)
         %small

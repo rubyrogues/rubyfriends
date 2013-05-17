@@ -67,19 +67,16 @@ module TweetUtility
 
   def populate_new_tweet(tweet_status)
     tweet = Tweet.new
-    field_mappings = {
-      username: :username=,
-      tweet_id: :tweet_id=,
-      tweet_text: :tweet_text=,
-      retweet_count: :retweet_count=,
-      published_at: :published_at=,
-      # carrierwave remote_fieldname_url will download image from url, convert
-      # it and resave it
-      media_url: :remote_image_url=
-    }
     field_mappings.each do |status_field, tweet_field|
       data = tweet_status.public_send(status_field)
       tweet.public_send(tweet_field, data)
+    end
+    media_url = tweet_status.media_url
+    if media_url
+      # Carrierwave remote_fieldname_url will download image from url,
+      # convert it and resave it.
+      # We only want to set the field if there is a media url
+      tweet.remote_image_url = media_url
     end
     tweet.published = true
     tweet
@@ -91,6 +88,16 @@ module TweetUtility
 
   def tweets_must_have_media?
     !allow_tweets_without_media?
+  end
+
+  def field_mappings
+    {
+      username: :username=,
+      tweet_id: :tweet_id=,
+      tweet_text: :tweet_text=,
+      retweet_count: :retweet_count=,
+      published_at: :published_at=,
+    }
   end
 
 end
