@@ -5,6 +5,10 @@ module TweetHelper
     "https://twitter.com/#!/#{term}"
   end
 
+  def twitter_status_url(username, tweet_id)
+    "https://twitter.com/#{username}/status/#{tweet_id}"
+  end
+
   def total_tweets
     tweets.count
   end
