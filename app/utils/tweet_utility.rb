@@ -20,7 +20,11 @@ module TweetUtility
   private
 
   def new_tweets(tweet_statuses)
-    tweets_with_media(tweet_statuses).select do |tweet_status|
+    if tweets_must_have_media?
+      tweets_with_media(tweet_statuses)
+    else
+      tweet_statuses
+    end.select do |tweet_status|
       not_a_retweet(tweet_status) &&
         tweet_media_not_saved(tweet_status) &&
         tweet_already_saved(tweet_status)
@@ -32,7 +36,11 @@ module TweetUtility
   end
 
   def tweet_media_not_saved(tweet_status)
-    Tweet.where(media_url: tweet_status.media_url).count('id') == 0
+    if tweet_status.media_url
+      Tweet.where(media_url: tweet_status.media_url).count('id') == 0
+    else
+      true
+    end
   end
 
   def not_a_retweet(tweet_status)
@@ -59,22 +67,37 @@ module TweetUtility
 
   def populate_new_tweet(tweet_status)
     tweet = Tweet.new
-    field_mappings = {
+    field_mappings.each do |status_field, tweet_field|
+      data = tweet_status.public_send(status_field)
+      tweet.public_send(tweet_field, data)
+    end
+    media_url = tweet_status.media_url
+    if media_url
+      # Carrierwave remote_fieldname_url will download image from url,
+      # convert it and resave it.
+      # We only want to set the field if there is a media url
+      tweet.remote_image_url = media_url
+    end
+    tweet.published = true
+    tweet
+  end
+
+  def allow_tweets_without_media?
+    ENV['allow_tweets_without_media'] == 'true'
+  end
+
+  def tweets_must_have_media?
+    !allow_tweets_without_media?
+  end
+
+  def field_mappings
+    {
       username: :username=,
       tweet_id: :tweet_id=,
       tweet_text: :tweet_text=,
       retweet_count: :retweet_count=,
       published_at: :published_at=,
-      # carrierwave remote_fieldname_url will download image from url, convert
-      # it and resave it
-      media_url: :remote_image_url=
     }
-    field_mappings.each do |status_field, tweet_field|
-      data = tweet_status.public_send(status_field)
-      tweet.public_send(tweet_field, data)
-    end
-    tweet.published = true
-    tweet
   end
 
 end
