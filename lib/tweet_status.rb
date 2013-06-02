@@ -20,8 +20,10 @@ class TweetStatus
     tweet.text
   end
 
+  # Casting to string to match the db field type ->
+  # prevent problems with casting at query time
   def tweet_id
-    tweet.id
+    tweet.id.to_s
   end
 
   def retweet_count
