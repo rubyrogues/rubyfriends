@@ -20,10 +20,7 @@ class Tweet::HtmlPresenter
   end
 
   def url
-    buffer = tweet.media_display_url
-    return unless buffer
-    buffer = "http://#{buffer}" unless buffer.start_with? "http://"
-    buffer
+    TweetHelper.twitter_status_url(tweet.username, tweet.tweet_id)
   end
 
   def username

@@ -37,9 +37,10 @@ describe Tweet::HtmlPresenter do
   describe "#url" do
     subject(:url) { presenter.url }
 
-    it "adds a protocol if missing" do
-      tweet.media_display_url = "pic.twitter.com/cyL9StoS"
-      should match  %r{^http://}
+    it "builds a status url" do
+      tweet.username = 'foo'
+      tweet.tweet_id = 1
+      should == 'https://twitter.com/foo/status/1'
     end
   end
 end
