@@ -12,15 +12,9 @@ class Tweet::HtmlPresenter
   def text
     buffer = ActiveSupport::SafeBuffer.new
     buffer << tweet.tweet_text
-
-    # make links anchors
-    buffer.gsub! /(https?[^\s]+)/o,
-                      %q(<a href="\\1" target="_blank">\\1</a>)
-    # link hashtags
-    buffer.gsub! /#(\w+)/, '<a href="http://twitter.com/search?q=%23\\1">#\\1</a>'
-    # link users
-    buffer.gsub! /@(\w+)/, '<a href="http://twitter.com/\\1">@\\1</a>'
-
+    link_urls(buffer)
+    link_hashtags(buffer)
+    link_usernames(buffer)
     buffer
   end
 
@@ -34,7 +28,21 @@ class Tweet::HtmlPresenter
 
   private
 
+  def link_urls(text)
+    text.gsub! /(https?[^\s]+)/o,
+                      %q(<a href="\\1" target="_blank">\\1</a>)
+  end
+
+  def link_hashtags(text)
+    text.gsub! /#(\w+)/, '<a href="http://twitter.com/search?q=%23\\1">#\\1</a>'
+  end
+
+  def link_usernames(text)
+    text.gsub! /@(\w+)/, '<a href="http://twitter.com/\\1">@\\1</a>'
+  end
+
   def method_missing(*args)
     tweet.send *args
   end
+
 end
