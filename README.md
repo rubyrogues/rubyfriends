@@ -9,46 +9,86 @@ Check out all our wonderful [#RubyFriends](http://www.rubyfriends.com).
 ## Contributing
 
   1. [Fork it](https://help.github.com/articles/fork-a-repo)
+
   2. Setup development environment
 
   ```bash
-  $ bundle install
-  $ bundle exec rake bootstrap
+  bundle install
+  bundle exec rake bootstrap
+  ```
+
+  3. Configure
+
+  ```bash
   # edit config/application.yml (not version-controlled)
   # 1) change the SECRET_TOKEN
+  bundle exec rake secret
   # 2) add twitter credentials
   # see https://github.com/sferik/t for getting your twitter credentials
   # at http://dev.twitter.com/apps
-  $ rake figaro:heroku # if using heroku
-  $ rake refresh_tweets
-  $ rails s
+  # optionally configure whether to retweet 
+  # or whether to restrict to tweets with media, only
   ```
 
-  3. Create your feature branch
+  4. Test everything is set up correctly by running
 
   ```bash
-  $ git checkout -b my-new-feature
+  bundle exec rake db:migrate db:test:prepare spec
+  bundle exec rake refresh_tweets
+  bundle exec rails s
   ```
 
-  4. Commit your changes
+  5. Create your feature branch
 
   ```bash
-  $ git commit -am 'Added some feature'
+  git checkout -b my-new-feature
   ```
 
-  5. Run the specs
+  6. Commit your changes
 
   ```bash
-  $ bundle exec rake spec
+  git commit -am 'Added some feature'
   ```
 
-  6. Push to the branch
+  7. Run the specs
 
   ```bash
-  $ git push origin my-new-feature
+  bundle exec rake spec
   ```
 
-  7. [Create a pull request](https://help.github.com/articles/using-pull-requests)
+  8. Push to the branch
+
+  ```bash
+  git push origin my-new-feature
+  ```
+
+  9. [Create a pull request](https://help.github.com/articles/using-pull-requests)
+
+  
+## Heroku Configuration
+
+  ```bash
+  heroku addons:add newrelic:standard
+  # if not using aws s3 for image hosting
+    heroku addons:add cloudinary:starter 
+    # edit application.yml
+    # file_storage: cloudinary
+  # else file_storage: s3 and set s3 keys
+  heroku addons:add memcachier:dev # memcached
+  # the Gemfile should automatically require
+  # the 'memcachier' and 'cloudinary' gems
+  # if the services are configured
+  bundle exec rake figaro:heroku
+  # if not using a worker
+    heroku addons:add scheduler:standard
+    heroku addons:open scheduler
+    # schedule every 10 minutes
+    # bundle exec rake refresh_tweets
+  git push heroku master
+  heroku rake db:migrate
+  heroku logs # check that it's working
+  heroku rake refresh_tweets
+  ```
 
 ## Thanks
 

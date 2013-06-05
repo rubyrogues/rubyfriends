@@ -36,10 +36,23 @@ group :assets do
 end
 
 group :production do
+  def require_false_unless(gem_name, condition)
+    if condition
+      gem gem_name
+    else
+      gem gem_name, :require => false
+    end
+    gem gem_name
+  end
   # memcached
+  require_false_unless('memcachier', !!ENV['MEMCACHIER_USERNAME'])
   gem 'dalli'
+
   # db
   gem 'pg'
+  # heroku addon
+  # gem 'carrierwave' # must come first
+  require_false_unless('cloudinary', !!ENV['CLOUDINARY_URL'])
 end
 
 group :development do
