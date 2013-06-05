@@ -10,6 +10,8 @@ oauth_token_secret: xxx
 retweet: false
 allow_tweets_without_media: false
 # image upload
+# file_storage: cloudinary
+file_storage: s3
 s3_access_key_id: xxx
 s3_secret_access_key: xxx
 s3_bucket: xxx
