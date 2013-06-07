@@ -9,13 +9,11 @@ class Tweet::HtmlPresenter
     Tweet.model_name
   end
 
+  # escape unsafe html and linkify for display
   def text
     buffer = ActiveSupport::SafeBuffer.new
     buffer << tweet.tweet_text
-
-    buffer.gsub! /#(\w+)/, '<a href="http://twitter.com/search?q=%23\\1">#\\1</a>'
-    buffer.gsub! /@(\w+)/, '<a href="http://twitter.com/\\1">@\\1</a>'
-
+    buffer = TweetHelper.tweet_display_text(buffer)
     buffer
   end
 
@@ -32,4 +30,5 @@ class Tweet::HtmlPresenter
   def method_missing(*args)
     tweet.send *args
   end
+
 end

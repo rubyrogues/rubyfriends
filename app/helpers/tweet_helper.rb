@@ -17,6 +17,31 @@ module TweetHelper
     tweets.page(params).per(20)
   end
 
+  def tweet_display_text(text)
+    text = link_urls(text)
+    text = link_hashtags(text)
+    text = link_usernames(text)
+    text
+  end
+
+  def link_urls(text)
+    text.gsub(/(https?[^\s]+)/o,
+                      %q(<a href="\\1" target="_blank">\\1</a>)
+             )
+  end
+
+  def link_hashtags(text)
+    text.gsub(/#(\w+)/,
+              '<a href="http://twitter.com/search?q=%23\\1">#\\1</a>'
+             )
+  end
+
+  def link_usernames(text)
+    text.gsub(/@(\w+)/,
+              '<a href="http://twitter.com/\\1">@\\1</a>'
+             )
+  end
+
   private
 
   def tweets
