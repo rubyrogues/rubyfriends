@@ -59,7 +59,7 @@ module TweetUtility
       puts "Created tweet @#{tweet.username}: #{tweet.tweet_text}"
 
       if ENV['retweet'] =~ /true/io
-        Twitter.retweet tweet.id
+        Twitter.retweet tweet.tweet_id
         puts "Retweeted tweet @#{tweet.username}: #{tweet.tweet_text}"
       end
     end
