@@ -1,3 +1,10 @@
+PATH
+  remote: tweet_engine
+  specs:
+    tweet_engine (0.0.1)
+      rails (~> 3.2.13)
+      twitter
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -299,7 +306,7 @@ DEPENDENCIES
   susy
   thin
   timecop
-  twitter
+  tweet_engine!
   uglifier (>= 1.0.3)
   vcr
   webmock

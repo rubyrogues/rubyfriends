@@ -24,8 +24,8 @@ gem 'jquery-rails'
 gem 'kaminari'
 # web server
 gem 'thin'
-# twitter api
-gem 'twitter'
+# tweet_engine
+gem 'tweet_engine', path: 'tweet_engine'
 # cron jobs
 gem 'whenever', require: false
 
