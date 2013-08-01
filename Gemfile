@@ -1,5 +1,14 @@
 source 'https://rubygems.org'
 
+def require_false_unless(gem_name, condition)
+  if condition
+    gem gem_name
+  else
+    gem gem_name, :require => false
+  end
+  gem gem_name
+end
+
 gem 'rails', '~> 3.2.0'
 
 # image uploads
@@ -13,8 +22,6 @@ gem 'haml-rails'
 gem 'jquery-rails'
 # pagination
 gem 'kaminari'
-# diagnostics
-gem 'newrelic_rpm'
 # web server
 gem 'thin'
 # twitter api
@@ -36,14 +43,9 @@ group :assets do
 end
 
 group :production do
-  def require_false_unless(gem_name, condition)
-    if condition
-      gem gem_name
-    else
-      gem gem_name, :require => false
-    end
-    gem gem_name
-  end
+  # diagnostics
+  require_false_unless('newrelic_rpm', !!ENV['NEW_RELIC_APP_NAME'])
+  # gem 'newrelic_rpm', require: false
   # memcached
   require_false_unless('memcachier', !!ENV['MEMCACHIER_USERNAME'])
   gem 'dalli'
