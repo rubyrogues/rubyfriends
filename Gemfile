@@ -13,8 +13,6 @@ gem 'haml-rails'
 gem 'jquery-rails'
 # pagination
 gem 'kaminari'
-# diagnostics
-gem 'newrelic_rpm'
 # web server
 gem 'thin'
 # twitter api
@@ -36,6 +34,8 @@ group :assets do
 end
 
 group :production do
+  # diagnostics
+  gem 'newrelic_rpm'
   def require_false_unless(gem_name, condition)
     if condition
       gem gem_name
