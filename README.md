@@ -35,7 +35,7 @@ Check out all our wonderful [#RubyFriends](http://www.rubyfriends.com).
   ```bash
   bundle exec rake db:migrate db:test:prepare spec
   bundle exec rake refresh_tweets
-  bundle exec rails s
+  bundle exec foreman start
   ```
 
   5. Create your feature branch
