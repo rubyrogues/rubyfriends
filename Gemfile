@@ -1,6 +1,12 @@
 source 'https://rubygems.org'
 
 gem 'rails', '~> 3.2.0'
+def only_on_heroku(&block)
+  yield if ENV.include?('DATABASE_URL')
+end
+only_on_heroku do
+  ruby "1.9.3"
+end
 
 # image uploads
 gem 'carrierwave'
