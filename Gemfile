@@ -51,7 +51,7 @@ group :production do
     gem gem_name
   end
   # memcached
-  require_false_unless('memcachier', !!ENV['MEMCACHIER_USERNAME'])
+  gem 'memcachier'
   gem 'dalli'
 
   # db

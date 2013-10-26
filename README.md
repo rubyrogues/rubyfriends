@@ -76,8 +76,8 @@ Check out all our wonderful [#RubyFriends](http://www.rubyfriends.com).
   # else file_storage: s3 and set s3 keys
   heroku addons:add memcachier:dev # memcached
   # the Gemfile should automatically require
-  # the 'memcachier' and 'cloudinary' gems
-  # if the services are configured
+  # the 'cloudinary' gem
+  # if the service is  configured
   bundle exec rake figaro:heroku
   # if not using a worker
     heroku addons:add scheduler:standard
