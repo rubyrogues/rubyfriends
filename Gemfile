@@ -17,7 +17,7 @@ gem 'jquery-rails'
 # pagination
 gem 'kaminari'
 # diagnostics
-#gem 'newrelic_rpm'
+gem 'newrelic_rpm'
 # web server
 gem 'thin'
 # twitter api
