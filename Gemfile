@@ -70,7 +70,7 @@ end
 
 group :test do
   # acceptance testing
-  gem 'cucumber-rails', require: false
+  gem 'cucumber-rails', require: false, github: 'cucumber/cucumber-rails' # see https://github.com/cucumber/cucumber-rails/pull/253#issuecomment-23400508
   # clear db
   gem 'database_cleaner'
   # notifier
