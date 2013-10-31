@@ -24,16 +24,16 @@ gem 'thin'
 # twitter api
 gem 'twitter'
 
-# twitter boostrap converted to sass files
-gem 'bootstrap-sass', '~> 2.1.0.0'
 # javascript
 gem 'coffee-rails', '~> 4.0.0'
 gem "compass-rails", "~> 2.0.alpha.0"
 gem 'sass-rails', '~> 4.0.0'
+# twitter boostrap converted to sass files
+gem 'bootstrap-sass', '~> 2.1.0.0'
 # fluid grids
 gem 'susy'
 # compressor
-gem 'uglifier', '>= 1.0.3'
+gem 'uglifier', '>= 1.3.0'
 
 group :production do
   def require_false_unless(gem_name, condition)
@@ -53,6 +53,8 @@ group :production do
   # heroku addon
   # gem 'carrierwave' # must come first
   require_false_unless('cloudinary', !!ENV['CLOUDINARY_URL'])
+
+  # required by heroku
   gem 'rails_12factor'
   gem 'rails_serve_static_assets'
 end

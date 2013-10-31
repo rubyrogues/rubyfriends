@@ -55,6 +55,10 @@ module Rubyfriends
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
 
+    # Adding asset pipeline search paths
+    config.assets.paths << Rails.root.join('app', 'assets', 'images', 'sprites')
+
+
     config.generators do |g|
       g.stylesheets false
       g.javascripts false
