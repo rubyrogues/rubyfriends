@@ -7,6 +7,7 @@ gem 'rails', '~> 4.0.0'
 gem 'carrierwave'
 gem 'sprockets-rails', :require => 'sprockets/railtie'
 gem 'fog'
+# Fog dependency for AWS keys
 gem 'unf'
 # image manipulation
 gem 'mini_magick'
@@ -22,8 +23,6 @@ gem 'newrelic_rpm'
 gem 'thin'
 # twitter api
 gem 'twitter'
-# cron jobs
-gem 'whenever', require: false
 
 # twitter boostrap converted to sass files
 gem 'bootstrap-sass', '~> 2.1.0.0'
