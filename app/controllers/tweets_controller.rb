@@ -5,7 +5,7 @@ class TweetsController < ApplicationController
   end
 
   def show
-    @tweet = Tweet.find(params[:id])
+    @tweet = Tweet.where(id: params[:id]).limit(1).first
     render layout: false
   end
 
