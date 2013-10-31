@@ -1,11 +1,13 @@
 source 'https://rubygems.org'
-ruby "1.9.3"
+ruby "2.0.0"
 
-gem 'rails', '~> 3.2.0'
+gem 'rails', '~> 4.0.0'
 
 # image uploads
 gem 'carrierwave'
+gem 'sprockets-rails', :require => 'sprockets/railtie'
 gem 'fog'
+gem 'unf'
 # image manipulation
 gem 'mini_magick'
 # view templating
@@ -15,7 +17,7 @@ gem 'jquery-rails'
 # pagination
 gem 'kaminari'
 # diagnostics
-gem 'newrelic_rpm'
+#gem 'newrelic_rpm'
 # web server
 gem 'thin'
 # twitter api
@@ -27,9 +29,9 @@ group :assets do
   # twitter boostrap converted to sass files
   gem 'bootstrap-sass', '~> 2.1.0.0'
   # javascript
-  gem 'coffee-rails', '~> 3.2.1'
-  gem 'compass-rails'
-  gem 'sass-rails', '~> 3.2.3'
+  gem 'coffee-rails', '~> 4.0.0'
+  gem "compass-rails", "~> 2.0.alpha.0"
+  gem 'sass-rails', '~> 4.0.0'
   # fluid grids
   gem 'susy'
   # compressor
