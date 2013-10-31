@@ -53,6 +53,8 @@ group :production do
   # heroku addon
   # gem 'carrierwave' # must come first
   require_false_unless('cloudinary', !!ENV['CLOUDINARY_URL'])
+  gem 'rails_12factor'
+  gem 'rails_serve_static_assets'
 end
 
 group :development do
