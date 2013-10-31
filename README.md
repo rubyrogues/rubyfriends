@@ -85,9 +85,9 @@ Check out all our wonderful [#RubyFriends](http://www.rubyfriends.com).
     # schedule every 10 minutes
     # bundle exec rake refresh_tweets
   git push heroku master
-  heroku rake db:migrate
+  heroku run rake db:migrate
   heroku logs # check that it's working
-  heroku rake refresh_tweets
+  heroku run rake refresh_tweets
   ```
 
 ## Thanks
