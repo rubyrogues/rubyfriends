@@ -25,18 +25,16 @@ gem 'twitter'
 # cron jobs
 gem 'whenever', require: false
 
-group :assets do
-  # twitter boostrap converted to sass files
-  gem 'bootstrap-sass', '~> 2.1.0.0'
-  # javascript
-  gem 'coffee-rails', '~> 4.0.0'
-  gem "compass-rails", "~> 2.0.alpha.0"
-  gem 'sass-rails', '~> 4.0.0'
-  # fluid grids
-  gem 'susy'
-  # compressor
-  gem 'uglifier', '>= 1.0.3'
-end
+# twitter boostrap converted to sass files
+gem 'bootstrap-sass', '~> 2.1.0.0'
+# javascript
+gem 'coffee-rails', '~> 4.0.0'
+gem "compass-rails", "~> 2.0.alpha.0"
+gem 'sass-rails', '~> 4.0.0'
+# fluid grids
+gem 'susy'
+# compressor
+gem 'uglifier', '>= 1.0.3'
 
 group :production do
   def require_false_unless(gem_name, condition)
