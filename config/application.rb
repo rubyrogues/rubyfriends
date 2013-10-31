@@ -62,7 +62,5 @@ module Rubyfriends
       g.test_framework nil
     end
 
-    # Fix for Heroku asset compilation
-    config.assets.initialize_on_precompile = false
   end
 end
