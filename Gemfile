@@ -26,7 +26,7 @@ gem 'twitter'
 
 # javascript
 gem 'coffee-rails', '~> 4.0.0'
-gem "compass-rails", "~> 2.0.alpha.0"
+gem "compass-rails", '~> 1.1', '>= 1.1.5'
 gem 'sass-rails', '~> 4.0.0'
 # twitter boostrap converted to sass files
 gem 'bootstrap-sass', '~> 2.1.0.0'
