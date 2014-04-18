@@ -42,7 +42,6 @@ group :production do
     else
       gem gem_name, :require => false
     end
-    gem gem_name
   end
   # memcached
   gem 'memcachier'
